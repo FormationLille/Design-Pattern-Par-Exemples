@@ -7,8 +7,9 @@ Description du design pattern
 Description du contexter de l'exemple
 
 - ça c'est pour mettre en points
+* ça c'est pour mettre en italique *
 
-> ça c'est pour mettre en forme en italique
+> ça c'est pour mettre en forme
 
 ### Etape 1
 
