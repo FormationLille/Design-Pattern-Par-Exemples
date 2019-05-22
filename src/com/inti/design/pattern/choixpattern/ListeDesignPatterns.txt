@@ -1,0 +1,23 @@
+création     Singleton
+création     Prototype
+création     Factory
+création     Abstract factory
+création     Builder
+structure    Bridge
+structure    Facade
+structure    Adapter
+structure    Composite
+structure    Proxy
+structure    Flyweight
+structure    Decorator
+comportement Chain of Responsibility
+comportement Command
+comportement Interpreter
+comportement Iterator
+comportement Mediator
+comportement Memento
+comportement Observer
+comportement State
+comportement Strategy
+comportement Template Method
+comportement Visitor
