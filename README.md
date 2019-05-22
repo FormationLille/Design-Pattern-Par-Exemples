@@ -25,3 +25,5 @@ Mettre le nombre d'etapes que vous souhaitez vis-à-vis de votre design pattern,
 ### Etape finale
 
 Faites un calin aux gens que vous aimez, c'est important.
+
+Lien pour avoir tous les trucs de mise en page qu'il faut : https://guides.github.com/features/mastering-markdown/
