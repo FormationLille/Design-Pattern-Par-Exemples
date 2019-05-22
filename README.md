@@ -2,14 +2,14 @@
 
 Description du design pattern
 
-# Implémentation
+# Implementation
 
 Description du contexter de l'exemple
 
-- ça c'est pour mettre en points
-*ça c'est pour mettre en italique*
+- Ca c'est pour mettre en points
+*Ca c'est pour mettre en italique*
 
-> ça c'est pour mettre en forme
+> Ca c'est pour mettre en forme
 
 ### Etape 1
 
@@ -21,4 +21,4 @@ Mettre le nombre d'étapes que vous souhaitez vis-à-vis de votre design pattern
 
 ### Etape finale
 
-Faites un câlin aux gens que vous aimez, c'est important.
+Faites un calin aux gens que vous aimez, c'est important.
