@@ -1,6 +1,8 @@
-# Mon tutoriel de Design Pattern - nom du design pattern
+# Mon tutoriel de Design Pattern - Proxy
 
-    Description du design pattern
+    Ce tutoriel a été créé par Camille.
+
+    Proxy est un pattern de structure qui blablabla...
 
 # Implementation
 
