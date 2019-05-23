@@ -1,5 +1,5 @@
-# Mon tutoriel de Design Pattern - nom du design pattern
-
+# Mon tutoriel de Design Pattern - Memento (tutorialpoint.com)
+Realise par Pierre Laurend dans le cadre de la formation Adaming Mars - Juin 2019
     Description du design pattern
 
 # Implementation
@@ -35,3 +35,4 @@ Description du contexte de l'exemple
     Faites un calin aux gens que vous aimez, c'est important.
 
     Lien pour avoir tous les trucs de mise en page qu'il faut : https://guides.github.com/features/mastering-markdown/
+    (Markdown online)
