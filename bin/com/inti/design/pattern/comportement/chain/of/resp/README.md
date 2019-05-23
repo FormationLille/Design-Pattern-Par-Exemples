@@ -1,4 +1,5 @@
-# Mon tutoriel de Design Pattern - nom du design pattern
+# Mon tutoriel de Design Pattern - Chain Of Respon
+# by Yann 
 
 
     Description du design pattern
