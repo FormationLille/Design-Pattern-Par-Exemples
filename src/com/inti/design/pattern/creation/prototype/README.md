@@ -1,5 +1,7 @@
-# Mon tutoriel de Design Pattern - nom du design pattern
+# Tutoriel de Design Pattern - Prototype
 
+    Auteur : Romain Parisot
+    
     Description du design pattern
 
 # Implementation
