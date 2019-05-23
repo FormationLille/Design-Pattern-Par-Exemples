@@ -1,6 +1,6 @@
-# Mon tutoriel de Design Pattern - nom du design pattern
+# Mon tutoriel de Design Pattern - BRIDGE
 
-    Description du design pattern
+    Par Antoine C.
 
 # Implementation
 
