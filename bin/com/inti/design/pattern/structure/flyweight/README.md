@@ -1,6 +1,6 @@
-# Mon tutoriel de Design Pattern - nom du design pattern
+# Mon tutoriel de Design Pattern - Flyweight
 
-    Description du design pattern
+   Ce tuto va être créer par le magnifique Clément Renault
 
 # Implementation
 
