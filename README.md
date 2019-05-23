@@ -21,7 +21,7 @@ chain.of.resp                   com.inti.design.pattern.comportement.chain.of.re
 method                      com.inti.design.pattern.creation.factory.method		Antonin 
  interpreter                   com.inti.design.pattern.classes.adapter
  adapter                     com.inti.design.pattern.classes.interpreter
- Template Method                  com.inti.design.pattern.classes.template.Method
+ Template Method                  com.inti.design.pattern.classes.template.method
    interpreter                   com.inti.design.pattern.classes.interpreter
 # Implementation
 
