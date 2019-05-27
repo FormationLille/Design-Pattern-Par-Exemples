@@ -1,4 +1,4 @@
-# Mon tutoriel de Design Pattern - COmposite
+# Mon tutoriel de Design Pattern - Composite
 
 
     Description du design pattern

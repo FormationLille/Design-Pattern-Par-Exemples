@@ -1,35 +1,143 @@
-# Mon tutoriel de Design Pattern - COmposite
+# Tutoriel Design Pattern (Rémy) - Pattern Composite
+
+Composite est un Design Pattern de structure.
+Il permet d'organiser les objets en structure arborescente hiérarchisée et d'isoler des objets appartenant à un aggrégat.
+	= Il permet de gérer un ensemble d'objets en tant qu'un seul.
+
+Il rend le code plus simple en permettant de manipuler les éléments qui composent un objet sans avoir à modifier celui de leurs classes.
+La partie cliente peut ainsi manipuler un objet unique et un objet composé de la même manière.
+
+# Exemple
+
+Prenons comme modèle une cave à vin.
+Dans celle-ci on peut trouver des bouteilles de vin ou de biére; on a donc un nombre de bouteilles de vin v et un nombre de bouteilles de biéres b,
+leur somme représentée par un nombre de bouteilles total.
+
+Note : dans cet exemple le nombre de bouteilles de vin (ou de biére) est considéré comme un objet FIXE, on ne peut pas modifier directement ce nombre.
+
+![DPComposite](C:\Users\IN-LL-033\Pictures\DPComposite.png " Diagramme de classes Cave à Vin")
 
 
-    Description du design pattern
+### Création de nos Classes
 
-# Implementation
+On commence par la création de nos différentes classes et interfaces.
 
-Description du contexte de l'exemple
+* _Création de l'interface **Composant** : _   	
+
+```javascript
+    public interface Composant {
+		public int NbrBouteilles();
+		}
+```
+
+Elle sera implémentée par nos différents éléments
+
+* _Création de la classe **BouteilleBiere** : _
+
+```javascript
+    public class BouteilleBiere implements Composant{
+		private int nombreB;
+
+		public BouteilleBiere(int nbre) {
+			this.nombreB = nbre;
+		}
+		@Override
+		public int NbrBouteilles() {
+			return this.nombreB;
+		}
+    }
+```
 
 
-    - Ca c'est pour mettre en points
+* _Création de la classe **BouteilleVin** : _
 
-    *Ca c'est pour mettre en italique*
+```javascript
+	public class BouteilleVin implements Composant {
+		private int nombreV;
+	
+		public BouteilleVin(int nbre) {
+			this.nombreV = nbre;
+			}
+		@Override
+		public int NbrBouteilles() {
+			return this.nombreV;
+		}
+	}
+```
 
+* _Création de la classe **Cave** : _
 
-    Mettre le diagramme de classes
+```javascript
+	import java.util.ArrayList;
+	import java.util.Collection;
+	import java.util.Iterator;
 
+	public class Cave implements Composant{
+		private Collection elements;
 
+		public Cave() {
+			elements = new ArrayList();
+		}
 
+		public void remove(Composant composant) {
+			elements.remove(composant);
+		}
 
-    > Ca c'est pour mettre en forme
+		public void add(Composant composant) {
+			elements.add(composant);
+		}
 
-### Etape 1
+		public Iterator getElements() {
+			return elements.iterator();
+		}
+		@Override
+		public int NbrBouteilles() {
+			int result = 0;
+			for (Iterator i = elements.iterator(); i.hasNext(); ) {
+				Object objet = i.next();
+				Composant composant = (Composant)objet;
+				result += composant.NbrBouteilles();
+			}
+			return result;
+		}
+	}
+```
 
-    Mettre le code des classes principales
+* _Et enfin création de la classe **Test** : _
 
-### Etape 2
+```javascript
+	public class Test {
 
+	public static void main(String[] args) {
+		
+		System.out.println("--  Inventaire  --");
+		System.out.println("");
+		
+		BouteilleBiere maBiere = new BouteilleBiere(10);
+		System.out.println("-Bières : "+maBiere.NbrBouteilles()+" bouteilles");
+		System.out.println("");
 
-    Mettre le nombre d'etapes que vous souhaitez vis-a-vis de votre design pattern, 
-    en faisant le template je peux pas deviner combien il en faut.
+		BouteilleVin monVin = new BouteilleVin(20);
+		System.out.println("-Vin : "+monVin.NbrBouteilles()+" bouteilles");
 
+		System.out.println("");
+		
+		Cave maCave = new Cave();
+		maCave.add(monVin);
+		maCave.add(maBiere);
+		System.out.println("-Total : "+maCave.NbrBouteilles()+" bouteilles");
+		System.out.println("     Je suis fin heureux :) ");
+	 }
+	}
+```
+	
+### Résultat
+
+Une fois le test lancé on devrait retrouver le résultat suivant sur la console
+
+![RésultatTest] (C:\Users\IN-LL-033\Pictures\DBComposite2.png)
+
+On retrouve bien le total de bouteilles pris en compte dans notre cave.
 
 ### Etape finale
 
