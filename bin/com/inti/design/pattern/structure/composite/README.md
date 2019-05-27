@@ -1,4 +1,5 @@
-# Mon tutoriel de Design Pattern - nom du design pattern
+# Mon tutoriel de Design Pattern - COmposite
+
 
     Description du design pattern
 
