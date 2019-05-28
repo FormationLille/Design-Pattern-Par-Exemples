@@ -1,18 +1,18 @@
 # Mon tutoriel de Design Pattern - BRIDGE
 
-    Par Antoine C.
-	Sources : 
-	[Design Patterns - Bridge Pattern](https://www.tutorialspoint.com/design_pattern/bridge_pattern.htm)
-	[Cours design pattern m youssfi partie 7 facade bridge flyweight](https://fr.slideshare.net/mohamedyoussfi9/cours-design-pattern-m-youssfi-partie-7-facade-bridge-flyweight)
-	[Le Bridge Design Pattern, un patron de conception essentiel (Lea Fayolle)](https://medium.com/@fayolle.lea/le-bridge-design-pattern-un-patron-de-conception-essentiel-5a2e11dca972)
+Par Antoine C.
+Sources : 
+[Design Patterns - Bridge Pattern](https://www.tutorialspoint.com/design_pattern/bridge_pattern.htm)
+[Cours design pattern m youssfi partie 7 facade bridge flyweight](https://fr.slideshare.net/mohamedyoussfi9/cours-design-pattern-m-youssfi-partie-7-facade-bridge-flyweight)
+[Le Bridge Design Pattern, un patron de conception essentiel (Lea Fayolle)](https://medium.com/@fayolle.lea/le-bridge-design-pattern-un-patron-de-conception-essentiel-5a2e11dca972)
 	
-	Face à l’évolution rapide des applications et des besoins des clients, un Design Pattern comme le **BRIDGE** permet de faciliter les ajouts de fonctionnalités et de rendre certains composants réutilisables.
+Face à l’évolution rapide des applications et des besoins des clients, un Design Pattern comme le **BRIDGE** permet de faciliter les ajouts de fonctionnalités et de rendre certains composants réutilisables.
 	
-	Bridge est un design pattern de **Structure**.
+Bridge est un design pattern de **Structure**.
 	
-	Comme les Patterns *Facade* et *FlyWeight*, on l’utilise lorsqu’un système est complexe. Cette complexité apparaît quand un sous-système fait appel à plusieurs interfaces.
+Comme les Patterns *Facade* et *FlyWeight*, on l’utilise lorsqu’un système est complexe. Cette complexité apparaît quand un sous-système fait appel à plusieurs interfaces.
 	
-	2 Objectifs avec Bridge :
+2 Objectifs avec Bridge :
 	
 - Détacher l'abstraction de son implémentation. Ainsi les 2 peuvent varier indépendamment.
 - Ajouter progressivement des fonctionnalités tout en séparant les grandes déviations à l’aide de classes abstraites.
