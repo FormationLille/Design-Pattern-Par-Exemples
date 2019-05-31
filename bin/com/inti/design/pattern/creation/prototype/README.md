@@ -1,5 +1,6 @@
 # Tutoriel de Design Pattern - Prototype
 
+<<<<<<< HEAD
 Auteur : Romain Parisot
     
 Le but du design pattern Prototype est de pouvoir facilement copier un objet déjà instancié. Plutôt que de créer un nouvel objet et de l'instancier avec les mêmes paramètres que l'objet à copier, on clone directement l'objet, à la manière de la mitose des cellules.
@@ -81,3 +82,35 @@ public class Burger implements Cloneable {
 
 Attention : il faut bien penser à créer la méthode clone() car elle n'est pas utilisable directement. Le modèle ci-dessus est la version générique de la méthode.
 tous les objets ne peuvent pas non plus être clonnable, il faut donc être prudent et vérifier ce que l'on fait. Dans le cas où votre classe possède un attribut non immuable et non clonable,vous pouvez vous retrouver dans le cas où vos deux objet (original et clone) possède le même attribut (même instance).
+=======
+    Auteur : Romain Parisot
+    
+    Description du design pattern
+
+# Implementation
+
+Description du contexte de l'exemple
+
+
+Mettre le diagramme de classes
+
+- Ca c'est pour mettre en points
+
+*Ca c'est pour mettre en italique*
+
+> Ca c'est pour mettre en forme
+
+### Etape 1
+
+Mettre le code des classes principales
+
+### Etape 2
+
+Mettre le nombre d'etapes que vous souhaitez vis-à-vis de votre design pattern, en faisant le template je peux pas deviner combien il en faut.
+
+### Etape finale
+
+Faites un calin aux gens que vous aimez, c'est important.
+
+Lien pour avoir tous les trucs de mise en page qu'il faut : https://guides.github.com/features/mastering-markdown/
+>>>>>>> Pierreleproducode
