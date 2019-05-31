@@ -99,7 +99,7 @@ Dans un premier package, `tuto.bridge.implementation`, créez l’interface et l
 
 ### Etape 2
 
-Dans un autre package, `tuto.bridge.abstraction` (qui nous permet de souligner l’indépendance de l’abstraction vis-à-vis de son implémentation), rapporter la classe **abstraite** Instrument et les classes qui l'étendent :
+Dans un autre package, `tuto.bridge.abstraction` (qui nous permet de souligner l’indépendance de l’abstraction vis-à-vis de son implémentation), rapportez la classe **abstraite** Instrument et les classes qui l'étendent :
 
 	package tuto.bridge.abstraction;
 
@@ -185,7 +185,7 @@ Dans un autre package, `tuto.bridge.abstraction` (qui nous permet de souligner l
 
 ### Etape 3
 
-	Testez votre programme dans le package `tuto.bridge`
+Testez votre programme dans le package `tuto.bridge`
 
 	package tuto.bridge;
 
