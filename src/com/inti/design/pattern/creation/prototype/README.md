@@ -1,22 +1,22 @@
 # Tutoriel de Design Pattern - Prototype
 
-    Auteur : Romain Parisot
+Auteur : Romain Parisot
     
-    Le but du design pattern Prototype est de pouvoir facilement copier un objet déjà instancié. Plutôt que de créer un nouvel objet et de l'instancier avec les mêmes paramètres que l'objet à copier, on clone directement l'objet, à la manière de la mitose des cellules.
-    Celà permet une économie de ressources car on évite la création classique d'objets pour une méthode plus optimisée. C'est une meilleure méthode pour créer des objets, notamment lorsque la création de ceux-ci fait intervenir des méthodes coûteuses comme par exemple l'accès à une base de données.
+Le but du design pattern Prototype est de pouvoir facilement copier un objet dÃ©jÃ  instanciÃ©. PlutÃ´t que de crÃ©er un nouvel objet et de l'instancier avec les mÃªmes paramÃ¨tres que l'objet Ã  copier, on clone directement l'objet, Ã  la maniÃ¨re de la mitose des cellules.
+CelÃ  permet une Ã©conomie de ressources car on Ã©vite la crÃ©ation classique d'objets pour une mÃ©thode plus optimisÃ©e. C'est une meilleure mÃ©thode pour crÃ©er des objets, notamment lorsque la crÃ©ation de ceux-ci fait intervenir des mÃ©thodes coÃ»teuses comme par exemple l'accÃ¨s Ã  une base de donnÃ©es.
 
 # Implementation
 
-Nous sommes dans une société de burgers. Le but est de pouvoir être le plus productif en fabriquant des burgers rapidement.
-Le soucis est qu'un burger necessite plusieurs ingrédients, mis dans un ordre précis.
+Nous sommes dans une sociÃ©tÃ© de burgers. Le but est de pouvoir Ãªtre le plus productif en fabriquant des burgers rapidement.
+Le soucis est qu'un burger necessite plusieurs ingrÃ©dients, mis dans un ordre prÃ©cis.
 
 ## Etape 1 : Les burgers classiques
-La technique classique pour créer un burger est la suivante :
+La technique classique pour crÃ©er un burger est la suivante :
 - on commmence par donner un nom au burger
-- on ajoute ensuite le premier ingrédient (typiquement le pain)
+- on ajoute ensuite le premier ingrÃ©dient (typiquement le pain)
 - puis on ajoute le second
-- puis le troisième
-- jusqu'à arriver au dernier ingrédient (le pain du dessus)
+- puis le troisiÃ¨me
+- jusqu'Ã  arriver au dernier ingrÃ©dient (le pain du dessus)
 
 ```java
 Burger vegi = new Burger("Vegi Burger");
@@ -29,17 +29,17 @@ Burger vegi = new Burger("Vegi Burger");
 		vegi.addIngredient("Bun");
 ```
 
-Ceci doit être répété pour chaque client et est très fastidieux.
+Ceci doit Ãªtre rÃ©pÃ©tÃ© pour chaque client et est trÃ¨s fastidieux.
 
-## Etape 2 : La révolution des burgers clonables
-Heuresement, notre ingénieur a mis au point un nouveau type de Burger ! Les burgers clonables !
+## Etape 2 : La rÃ©volution des burgers clonables
+Heuresement, notre ingÃ©nieur a mis au point un nouveau type de Burger ! Les burgers clonables !
 ```java
 public class Burger implements Cloneable
 ```
 
-Grâce a ses Burgers et à leur méthode clone(), tout va devenir plus simple !
+GrÃ¢ce a ses Burgers et Ã  leur mÃ©thode clone(), tout va devenir plus simple !
 ```java
-// Méthode de clonage du burger
+// MÃ©thode de clonage du burger
 	@Override
 	public Object clone() {
 		Object object = null;
@@ -53,7 +53,7 @@ Grâce a ses Burgers et à leur méthode clone(), tout va devenir plus simple !
 ```
 
 ## Etape 3 : Le clonage de masse
-En effet, cette methode permet à un burger de créer une copie de lui-même. Ceci permet un gain de temps considérable, car il nous suffit désormais de créer un seul burger et on se contentera de le cloner pour chaque client.
+En effet, cette methode permet Ã  un burger de crÃ©er une copie de lui-mÃªme. Ceci permet un gain de temps considÃ©rable, car il nous suffit dÃ©sormais de crÃ©er un seul burger et on se contentera de le cloner pour chaque client.
 ```java
 for(client : clients){
   Burger monBurger = burgerType.clone();
@@ -61,11 +61,11 @@ for(client : clients){
 ```
 
 # Conclusion
-Le design pattern Prototype permet de cloner un objet afin d'éviter de recréer l'objet de zéro. il permet une optimisation des performances du programme.
-Pour implémenter ce designe pattern en Java, in suffit de déclarer la classe que l'on souhaite cloner comme clonnable et de lui donner la méthode appropriée :
+Le design pattern Prototype permet de cloner un objet afin d'Ã©viter de recrÃ©er l'objet de zÃ©ro. il permet une optimisation des performances du programme.
+Pour implÃ©menter ce designe pattern en Java, in suffit de dÃ©clarer la classe que l'on souhaite cloner comme clonnable et de lui donner la mÃ©thode appropriÃ©e :
 ```java
 public class Burger implements Cloneable {
-  // Méthode de clonage du burger
+  // MÃ©thode de clonage du burger
 	@Override
 	public Object clone() {
 		Object object = null;
@@ -79,5 +79,5 @@ public class Burger implements Cloneable {
 }
 ```
 
-Attention : il faut bien penser à créer la méthode clone() car elle n'est pas utilisable directement. Le modèle ci-dessus est la version générique de la méthode.
-tous les objets ne peuvent pas non plus être clonnable, il faut donc être prudent et vérifier ce que l'on fait. Dans le cas où votre classe possède un attribut non immuable et non clonable,vous pouvez vous retrouver dans le cas où vos deux objet (original et clone) possède le même attribut (même instance).
+Attention : il faut bien penser Ã  crÃ©er la mÃ©thode clone() car elle n'est pas utilisable directement. Le modÃ¨le ci-dessus est la version gÃ©nÃ©rique de la mÃ©thode.
+tous les objets ne peuvent pas non plus Ãªtre clonnable, il faut donc Ãªtre prudent et vÃ©rifier ce que l'on fait. Dans le cas oÃ¹ votre classe possÃ¨de un attribut non immuable et non clonable,vous pouvez vous retrouver dans le cas oÃ¹ vos deux objet (original et clone) possÃ¨de le mÃªme attribut (mÃªme instance).
