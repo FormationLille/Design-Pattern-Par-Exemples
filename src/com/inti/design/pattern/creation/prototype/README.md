@@ -20,13 +20,13 @@ La technique classique pour créer un burger est la suivante :
 
 ```java
 Burger vegi = new Burger("Vegi Burger");
-		vegi.addIngredient("Bun");
-		vegi.addIngredient("Steak de soja");
-		vegi.addIngredient("Salade");
-		vegi.addIngredient("Radis");
-		vegi.addIngredient("Concombre");
-		vegi.addIngredient("Guacamole");
-		vegi.addIngredient("Bun");
+vegi.addIngredient("Bun");
+vegi.addIngredient("Steak de soja");
+vegi.addIngredient("Salade");
+vegi.addIngredient("Radis");
+vegi.addIngredient("Concombre");
+vegi.addIngredient("Guacamole");
+vegi.addIngredient("Bun");
 ```
 
 Ceci doit être répété pour chaque client et est très fastidieux.
@@ -40,23 +40,23 @@ public class Burger implements Cloneable
 Grâce a ses Burgers et à leur méthode clone(), tout va devenir plus simple !
 ```java
 // Méthode de clonage du burger
-	@Override
-	public Object clone() {
-		Object object = null;
-		try {
-			object = super.clone();
-		} catch (CloneNotSupportedException e) {
-			e.printStackTrace();
-		}
-		return object;
+@Override
+public Object clone() {
+	Object object = null;
+	try {
+		object = super.clone();
+	} catch (CloneNotSupportedException e) {
+		e.printStackTrace();
 	}
+	return object;
+}
 ```
 
 ## Etape 3 : Le clonage de masse
 En effet, cette methode permet à un burger de créer une copie de lui-même. Ceci permet un gain de temps considérable, car il nous suffit désormais de créer un seul burger et on se contentera de le cloner pour chaque client.
 ```java
 for(client : clients){
-  Burger monBurger = burgerType.clone();
+	Burger monBurger = burgerType.clone();
 }
 ```
 
@@ -65,7 +65,7 @@ Le design pattern Prototype permet de cloner un objet afin d'éviter de recréer
 Pour implémenter ce designe pattern en Java, in suffit de déclarer la classe que l'on souhaite cloner comme clonnable et de lui donner la méthode appropriée :
 ```java
 public class Burger implements Cloneable {
-  // Méthode de clonage du burger
+	// Méthode de clonage du burger
 	@Override
 	public Object clone() {
 		Object object = null;
