@@ -124,7 +124,7 @@ Dans un autre package, `tuto.bridge.abstraction` (qui nous permet de souligner l
 
 	public class InstruCordes extends Instrument {
 
-	private String nom;
+	public String nom;
 
 	public InstruCordes(OrdrePrix ordrePrix, String nom) {
 		super(ordrePrix);
@@ -146,7 +146,7 @@ Dans un autre package, `tuto.bridge.abstraction` (qui nous permet de souligner l
 
 	public class InstruPercu extends Instrument {
 
-	private String nom;
+	public String nom;
 
 	public InstruPercu(OrdrePrix ordrePrix, String nom) {
 		super(ordrePrix);
@@ -168,7 +168,7 @@ Dans un autre package, `tuto.bridge.abstraction` (qui nous permet de souligner l
 
 	public class InstruVent extends Instrument {
 
-	private String nom;
+	public String nom;
 
 	public InstruVent(OrdrePrix ordrePrix, String nom) {
 		super(ordrePrix);

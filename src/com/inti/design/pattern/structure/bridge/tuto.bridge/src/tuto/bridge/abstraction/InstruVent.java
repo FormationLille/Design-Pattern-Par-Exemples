@@ -4,7 +4,7 @@ import tuto.bridge.implementation.OrdrePrix;
 
 public class InstruVent extends Instrument {
 
-	private String nom;
+	public String nom;
 
 	public InstruVent(OrdrePrix ordrePrix, String nom) {
 		super(ordrePrix);
