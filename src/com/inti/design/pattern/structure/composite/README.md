@@ -1,41 +1,52 @@
 # Tutoriel Design Pattern (Rémy) - Pattern Composite
 
-Composite est un Design Pattern de structure.
-Il permet d'organiser les objets en structure arborescente hiérarchisée et d'isoler des objets appartenant à un aggrégat.
-	= Il permet de gérer un ensemble d'objets en tant qu'un seul.
+Composite est un Design Pattern de structure qui permet d'organiser des objets similaires
+(ou avec des fonctions similaires) en structure arborescente hiérarchisée.
+L'idée est de manipuler un groupe d'objets de la même façon que s'il s'agissait d'un objet unique.
+Cela permet de simplifier le code et de manipuler directement les éléments qui composent un objet sans
+avoir à modifier le code de leurs classes.
 
-Il rend le code plus simple en permettant de manipuler les éléments qui composent un objet sans avoir à modifier celui de leurs classes.
-La partie cliente peut ainsi manipuler un objet unique et un objet composé de la même manière.
+En régle générale on retrouve différents éléments: 
 
-# Exemple
+![DPComposite](C:\Users\IN-LL-033\Pictures\DPComposite2.png " Modèle général du DP Composite ")
 
-Prenons comme modèle une cave à vin.
-Dans celle-ci on peut trouver des bouteilles de vin ou de biére; on a donc un nombre de bouteilles de vin v et un nombre de bouteilles de biéres b,
-leur somme représentée par un nombre de bouteilles total.
+- Objet : l'interface pour la composition des objets, donne le comportement par défaut.
+- ObjetSimple : implémente l'interface commune Objet et représente l'objet manipulé.
+- ObjetComposite : permet de stocker et de gérer nos composants, et de leur définir un comportement.
+ 
+# Exemple : Cave à vins.
 
-Note : dans cet exemple le nombre de bouteilles de vin (ou de biére) est considéré comme un objet FIXE, on ne peut pas modifier directement ce nombre.
+Si on prend comme exemple la gestion du nombre de bouteille que contient une cave, on admet qu'on puisse y trouver
+un nombre de bouteilles de vin _nombreV_, et/ou un nombre de bouteilles de biére _nombreB_.
+Ces 2 nombres sont nos objets à manipuler et leur somme donne le nombre total de bouteilles de notre cave.
+Dans notre classe Composite (notre Cave) dans laquelle on définit une collection contenant ces 2 nombres on pourra
+manipuler notre nombre de bouteilles total directement.
 
-![DPComposite](C:\Users\IN-LL-033\Pictures\DPComposite.png " Diagramme de classes Cave à Vin")
+![DPComposite](C:\Users\IN-LL-033\Pictures\DPComposite13215.png " Diagramme de classes Cave à Vins")
 
+### Création des Classes
 
-### Création de nos Classes
+On commence par la création de notre interface et de nos classes : 
+	- une interface _Bouteilles_ simple dans laquelle on définit un nombre de bouteilles;
+	
+	- une classe _BouteilleBiere_ et une classe _BouteilleVin_ qui implémentent cette interface et qui permettent la création 
+	de nos objets, respectivement nombreB et nombreV;
 
-On commence par la création de nos différentes classes et interfaces.
+	- une classe composite _Cave_ qui implémente également l'interface _Bouteilles_ et dans laquelle on définit une
+	collection pour stocker et manipuler nos objets nombreB et nombreV.
 
-* _Création de l'interface **Composant** : _   	
+ *_Création de l'interface **Bouteilles** :_   	
 
 ```javascript
-    public interface Composant {
+    public interface Bouteilles {
 		public int NbrBouteilles();
 		}
 ```
 
-Elle sera implémentée par nos différents éléments
-
 * _Création de la classe **BouteilleBiere** : _
 
 ```javascript
-    public class BouteilleBiere implements Composant{
+    public class BouteilleBiere implements Bouteilles{
 		private int nombreB;
 
 		public BouteilleBiere(int nbre) {
@@ -48,11 +59,10 @@ Elle sera implémentée par nos différents éléments
     }
 ```
 
-
 * _Création de la classe **BouteilleVin** : _
 
 ```javascript
-	public class BouteilleVin implements Composant {
+	public class BouteilleVin implements Bouteilles {
 		private int nombreV;
 	
 		public BouteilleVin(int nbre) {
@@ -65,26 +75,26 @@ Elle sera implémentée par nos différents éléments
 	}
 ```
 
-* _Création de la classe **Cave** : _
+* _Création de la classe Composite **Cave** : _
 
 ```javascript
 	import java.util.ArrayList;
 	import java.util.Collection;
 	import java.util.Iterator;
 
-	public class Cave implements Composant{
+	public class Cave implements Bouteilles{
 		private Collection elements;
 
 		public Cave() {
 			elements = new ArrayList();
 		}
 
-		public void remove(Composant composant) {
-			elements.remove(composant);
+		public void remove(Bouteilles bouteille) {
+			elements.remove(bouteille);
 		}
 
-		public void add(Composant composant) {
-			elements.add(composant);
+		public void add(Bouteilles bouteille) {
+			elements.add(bouteille);
 		}
 
 		public Iterator getElements() {
@@ -95,38 +105,43 @@ Elle sera implémentée par nos différents éléments
 			int result = 0;
 			for (Iterator i = elements.iterator(); i.hasNext(); ) {
 				Object objet = i.next();
-				Composant composant = (Composant)objet;
-				result += composant.NbrBouteilles();
+				Bouteilles bouteille = (Bouteilles)objet;
+				result += bouteille.NbrBouteilles();
 			}
 			return result;
 		}
 	}
 ```
 
-* _Et enfin création de la classe **Test** : _
+### Création d'un main et lancement de l'application
+
+Tout est dit dans le titre, il ne nous reste plus ici qu'à donner une valeur à nos objets nombreB et nombreV, 
+à les stocker dans notre cave et à vérifier que tout s'est bien déroulé.
+
+* _Création de la classe **Test** : _
 
 ```javascript
 	public class Test {
 
 	public static void main(String[] args) {
 		
-		System.out.println("--  Inventaire  --");
+		System.out.println("Nombre de bouteilles : ");
 		System.out.println("");
-		
+
 		BouteilleBiere maBiere = new BouteilleBiere(10);
-		System.out.println("-Bières : "+maBiere.NbrBouteilles()+" bouteilles");
+		System.out.println("-Bière : "+maBiere.NbrBouteilles()+" bouteilles");
 		System.out.println("");
 
 		BouteilleVin monVin = new BouteilleVin(20);
 		System.out.println("-Vin : "+monVin.NbrBouteilles()+" bouteilles");
 
 		System.out.println("");
-		
+
 		Cave maCave = new Cave();
 		maCave.add(monVin);
 		maCave.add(maBiere);
 		System.out.println("-Total : "+maCave.NbrBouteilles()+" bouteilles");
-		System.out.println("     Je suis fin heureux :) ");
+
 	 }
 	}
 ```
@@ -137,10 +152,10 @@ Une fois le test lancé on devrait retrouver le résultat suivant sur la console
 
 ![RésultatTest] (C:\Users\IN-LL-033\Pictures\DBComposite2.png)
 
-On retrouve bien le total de bouteilles pris en compte dans notre cave.
-
-### Etape finale
-
-    Faites un calin aux gens que vous aimez, c'est important.
-
-    Lien pour avoir tous les trucs de mise en page qu'il faut : https://guides.github.com/features/mastering-markdown/
+Notre cave contient bien 30 bouteilles au total et est donc bien composée
+	- d'un nombreV de bouteilles de vin = 10 
+	- d'un nombreB de bouteilles de bière = 20
+	
+Note : Dans cet exemple on a utilisé uniquement l'opération add() pour ajouter les bouteilles à notre cave, 
+mais on peut aussi utilisé l'opération remove() définie ou toute autre opération JavaScript qui permettrait 
+de manipuler une collection.
