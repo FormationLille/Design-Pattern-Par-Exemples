@@ -84,5 +84,5 @@ Attention : il faut bien penser à créer la méthode ```clone()``` car elle n'e
 Tous les objets ne peuvent pas non plus être clonnable, il faut donc être prudent et vérifier ce que l'on fait. Dans le cas où votre classe possède un attribut non immuable et non clonable,vous pouvez vous retrouver dans le cas où vos deux objet (original et clone) possèdent le même attribut (même instance).
 
 # Sites utiles :
-https://gameprogrammingpatterns.com/prototype.html
-https://ydisanto.developpez.com/tutoriels/java/cloneable/
+- https://gameprogrammingpatterns.com/prototype.html
+- https://ydisanto.developpez.com/tutoriels/java/cloneable/
