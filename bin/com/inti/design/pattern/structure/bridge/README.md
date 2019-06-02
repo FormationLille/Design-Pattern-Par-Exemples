@@ -22,7 +22,7 @@ Comme les Patterns *Facade* et *FlyWeight*, on l’utilise lorsqu'un système es
 - Ajouter progressivement des fonctionnalités tout en séparant les grandes déviations à l’aide de classes abstraites.
 - Optimiser le système
 
-# Implementation
+# Implémentation
 
 **Contexte fonctionnel :** Un magasin de musique a besoin d’une application qui permette d'associer ses instruments a une catégorie de prix (petit prix, prix moyen, prix élevé).
 
@@ -35,10 +35,10 @@ Nous obtenons un diagramme de classe de ce type :
 
 L’implémentation est directement déclarée dans la classe abstraite. Le problème survient dans 2 cas : 
 
-- Si le commerçant, satisfait de cette application qui lui permet d’avoir une vision ordonnée de son stock, souhaite étendre l’application au reste du magasin (Livre, Accessoires et Disques). 
+- Si le commerçant, satisfait de cette application qui lui permet d’avoir une vision ordonnée de son stock, souhaite étendre l’application au reste du magasin (Livre, Accessoire et Disque). 
 	
 	-> Car nous serions obligé de refaire la même implémentation dans les 3 nouvelles classes abstraites.
-- Si le commerçant souhaite modifier son actuel méthode `instrument(OrdrePrix)`
+- Si le commerçant nous demande de modifier cette application.
 	
 	-> Car nous serions obligé de modifier la classe abstraite existante en redéfinissant la méthode, ce qui n’est pas une bonne pratique, ça pourrait faire planter une application qui jusque là était efficace.
  
@@ -50,11 +50,11 @@ Le Design Pattern Bridge va nous permettre de créer des implémentations de man
 
 ### Etape 1
 
-Créez un nouveau projet : tuto.bridge
+Créez un nouveau projet : com.inti.design.pattern.structure.bridge
 
-Dans un premier package, `tuto.bridge.implementation`, créez l’interface et les classes qui implémentent cette interface :
+Dans un premier package, `com.inti.design.pattern.structure.bridge.implementation`, créez l’interface et les classes qui implémentent cette interface :
 
-    package tuto.bridge.implementation;
+    package com.inti.design.pattern.structure.bridge.implementation;
 
 	public interface OrdrePrix { // implémenteur du Bridge
 
@@ -62,7 +62,7 @@ Dans un premier package, `tuto.bridge.implementation`, créez l’interface et l
 
 	}
 -------------------
-    package tuto.bridge.implementation;
+    package com.inti.design.pattern.structure.bridge.implementation;
 
 	public class PetitPrix implements OrdrePrix { // classes de mise en œuvre du Bridge
 
@@ -74,7 +74,7 @@ Dans un premier package, `tuto.bridge.implementation`, créez l’interface et l
 
 	}
 -------------------
-	package tuto.bridge.implementation;
+	package com.inti.design.pattern.structure.bridge.implementation;
 
 	public class PrixMoyen implements OrdrePrix { // classes de mise en œuvre du Bridge
 
@@ -85,7 +85,7 @@ Dans un premier package, `tuto.bridge.implementation`, créez l’interface et l
 	}
 	}
 -------------------
-	package tuto.bridge.implementation;
+	package com.inti.design.pattern.structure.bridge.implementation;
 
 	public class PrixEleve implements OrdrePrix { // classes de mise en œuvre du Bridge
 
@@ -99,15 +99,15 @@ Dans un premier package, `tuto.bridge.implementation`, créez l’interface et l
 
 ### Etape 2
 
-Dans un autre package, `tuto.bridge.abstraction` (qui nous permet de souligner l’indépendance de l’abstraction vis-à-vis de son implémentation), rapportez la classe **abstraite** Instrument et les classes qui l'étendent :
+Dans un autre package, `com.inti.design.pattern.structure.bridge.abstraction` (qui nous permet de souligner l’indépendance de l’abstraction vis-à-vis de son implémentation), rapportez la classe **abstraite** Instrument et les classes qui l'étendent :
 
-	package tuto.bridge.abstraction;
+	package com.inti.design.pattern.structure.bridge.abstraction;
 
-	import tuto.bridge.implementation.OrdrePrix;
+	import com.inti.design.pattern.structure.bridge.implementation.OrdrePrix;
 
 	public abstract class Instrument {
 
-	protected OrdrePrix ordrePrix; // on utilise l'interface OrdrePrix
+	protected OrdrePrix ordrePrix;
 
 	public Instrument(OrdrePrix ordrePrix) {
 		super();
@@ -118,9 +118,9 @@ Dans un autre package, `tuto.bridge.abstraction` (qui nous permet de souligner l
 
 	}
 -------------------
-	package tuto.bridge.abstraction;
+	package com.inti.design.pattern.structure.bridge.abstraction;
 
-	import tuto.bridge.implementation.OrdrePrix;
+	import com.inti.design.pattern.structure.bridge.implementation.OrdrePrix;
 
 	public class InstruCordes extends Instrument {
 
@@ -140,9 +140,9 @@ Dans un autre package, `tuto.bridge.abstraction` (qui nous permet de souligner l
 
 	}
 -------------------
-	package tuto.bridge.abstraction;
+	package com.inti.design.pattern.structure.bridge.abstraction;
 
-	import tuto.bridge.implementation.OrdrePrix;
+	import com.inti.design.pattern.structure.bridge.implementation.OrdrePrix;
 
 	public class InstruPercu extends Instrument {
 
@@ -162,9 +162,9 @@ Dans un autre package, `tuto.bridge.abstraction` (qui nous permet de souligner l
 
 	}
 -------------------
-	package tuto.bridge.abstraction;
+	package com.inti.design.pattern.structure.bridge.abstraction;
 
-	import tuto.bridge.implementation.OrdrePrix;
+	import com.inti.design.pattern.structure.bridge.implementation.OrdrePrix;
 
 	public class InstruVent extends Instrument {
 
@@ -185,17 +185,19 @@ Dans un autre package, `tuto.bridge.abstraction` (qui nous permet de souligner l
 
 ### Etape 3
 
-Testez votre programme dans le package `tuto.bridge`
+Testez votre programme dans le package `com.inti.design.pattern.structure.bridge`
 
-	package tuto.bridge;
+	package com.inti.design.pattern.structure.bridge;
 
-	import tuto.bridge.abstraction.*;
-	import tuto.bridge.implementation.*;
+	import com.inti.design.pattern.structure.bridge.abstraction.*;
+	import com.inti.design.pattern.structure.bridge.implementation.*;
 
 	public class Application {
 
-	/* on utilise les classes Instrument et l'interface OrdrePrix
-	   pour assigner un ordre de prix à chaque instrument. */
+	/*
+	 * on utilise l'interface OrdrePrix pour assigner un ordre de prix à chaque
+	 * instrument.
+	 */
 
 	public static void main(String[] args) {
 		Instrument instr1 = new InstruVent(new PetitPrix(), "flûte à bec");
@@ -210,7 +212,6 @@ Testez votre programme dans le package `tuto.bridge`
 	}
 
 	}
-
 
 ### Résultat
 
