@@ -1,37 +1,109 @@
-# Mon tutoriel de Design Pattern - Iterator
+# Tutoriel de Design Pattern - Iterator
 
-Le but est ici d'accéder à un objet dans une liste de manière séquentielle sans connaitre pour autant sa représentation (list, stack, tree,etc.)
+Auteur : Florian Libre
+
+Le but est ici de parcourir et accéder aux différents éléments d’un conteneur (hashmap, list, etc.) sans connaitre sa structure interne qui peut se révéler complexe. 
 
 # Implementation
 
-Description du contexte de l'exemple
+L’idée générale est donc ici de pouvoir parcourir la collection sans se soucier de sa nature
 
+On peut faire le rapprochement avec le pointeur avec ses 3 propriétés :
+-	L’accès à l’élément
+-	Le déplacement entre les éléments 
+-	L’épuisement du conteneur (la collection) 
 
-    - Ca c'est pour mettre en points
+On utilise pour cela l’interface Iterator qui contient plusieurs méthodes :
+-	public boolean hasNext() : Retourne true s’il y a encore des objets dans la collection
+-	public Object next() : retourne le prochain objet de la collection (sous réserve que la méthode hasNext() retourne true).
+-	public void remove() : supprime l’objet actuel
 
-    *Ca c'est pour mettre en italique*
-
-
-    Mettre le diagramme de classes
-
-
-
-
-    > Ca c'est pour mettre en forme
 
 ### Etape 1
 
-    Mettre le code des classes principales
+Création de l'interface Container.
 
+```java
+	package com.inti.design.pattern.comportement.iterator;
+
+	import java.util.Iterator;
+
+	public interface Container {
+	   public Iterator getIterator();
+	}
+```	
+	
 ### Etape 2
 
+Création de la classe Repository NameRepository implémentant l'interface Container. Cette classe possède une classe interne NameIterator implémentant l'interface Iterator.
 
-    Mettre le nombre d'etapes que vous souhaitez vis-a-vis de votre design pattern, 
-    en faisant le template je peux pas deviner combien il en faut.
+```java
+	package com.inti.design.pattern.comportement.iterator;
 
+	import java.util.Iterator;
+
+	public class NameRepository implements Container {
+	   public String noms[] = {"Yann" , "Florian" ,"Antoine" , "Taoufik"};
+
+	   @Override
+	   public Iterator getIterator() {
+	      return new NameIterator();
+	   }
+
+	   private class NameIterator implements Iterator {
+
+	      int index;
+
+	      @Override
+	      public boolean hasNext() {
+	      
+	         if(index < noms.length){
+	            return true;
+	         }
+	         return false;
+	      }
+
+	      @Override
+	      public Object next() {
+	      
+	         if(this.hasNext()){
+	            return noms[index++];
+	         }
+	         return null;
+	      }		
+	   }
+	}
+```
+
+### Etape 3
+
+Création de la classe main.
+
+```java
+	package com.inti.design.pattern.comportement.iterator;
+
+	import java.util.Iterator;
+
+	public class IteratorPattern {
+	
+	   public static void main(String[] args) {
+	      NameRepository namesRepository = new NameRepository();
+
+	      for(Iterator iter = namesRepository.getIterator(); iter.hasNext();){
+	         String nom = (String)iter.next();
+	         System.out.println("Nom : " + nom);
+	      } 	
+	   }
+	}
+```
 
 ### Etape finale
 
-    Faites un calin aux gens que vous aimez, c'est important.
+Lors de l'execution, vous devez obtenir ceci :
 
-    Lien pour avoir tous les trucs de mise en page qu'il faut : https://guides.github.com/features/mastering-markdown/
+```java
+	Nom : Yann
+	Nom : Florian
+	Nom : Antoine
+	Nom : Taoufik
+```
