@@ -1,4 +1,4 @@
-package com.inti.design.pattern.comportement.observer;
+package com.inti.design.pattern.comportement.observerV2;
 
 import com.inti.design.pattern.comportement.observer.ObservableConcret;
 import com.inti.design.pattern.comportement.observer.ObserverConcretImpl2;

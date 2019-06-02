@@ -1,6 +1,6 @@
 package com.inti.design.pattern.comportement.observer;
 
-public class ObserverConcretimpl1 implements IObserver {
+public class ObserverConcretImpl1 implements IObserver {
 
 	@Override
 	public void update(IObservable o) {
