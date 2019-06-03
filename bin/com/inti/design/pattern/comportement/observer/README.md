@@ -18,7 +18,7 @@ Les objets qui observent les changements d'état sont appelés observateurs (obs
 
 #####   Diagramme de classe :
 
-![diagramme de classe](https://user-images.githubusercontent.com/49645443/58785786-88774180-85e6-11e9-9714-4bad2be02a27.png)
+![diagramme de classe](https://user-images.githubusercontent.com/49645443/58786213-5a463180-85e7-11e9-9347-4e97e39fda60.png)
 
 ### Implementation
 
