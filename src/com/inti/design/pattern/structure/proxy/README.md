@@ -1,6 +1,6 @@
 # Mon tutoriel de Design Pattern - Proxy
 
-Ce tutoriel a été créé par Camille.
+Auteur : Camille
 
 Proxy est un design pattern de structure qui fournit un intermédiaire entre le client et un objet afin de contrôler l'accès à celui-ci.
 Il permet d'isoler le comportement lors de l'accès à un objet grâce à une interface. Le proxy ne charge l'objet qu'en cas de réel besoin, ou n'autorise l'accès que si les conditions sont satisfaites.

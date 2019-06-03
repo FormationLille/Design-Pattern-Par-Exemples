@@ -15,8 +15,7 @@ Mémento est classé dans la catégorie de modèle de comportement. (Au même titre q
 - MementoPatternDemo , notre classe de démonstration, utilisera les objets CareTaker et Originator pour montrer la restauration des états d'objet.
 
     
-    
-    
+    ![DiagrammeDesClassesMemento](https://user-images.githubusercontent.com/49645509/58788021-4ac8e780-85eb-11e9-943c-0a06174a3c3d.jpg)
 
 
 
@@ -91,7 +90,7 @@ public class ListeDeNosObjetsSauvegardes {
 }
 ```
 ### Étape 4
-##### Utilisez les objets CareTaker et Originator .
+##### Utilisez les objets ListeDeNosObjetsSauvegardes et Originator .
 
 **MementoPatternDemo.java**
 ```java
