@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 # Mon tutoriel de Design Pattern - FACADE
+=======
+<<<<<<< HEAD
+# Mon tutoriel de Design Pattern - FACADE FACADE
+=======
+# Mon tutoriel de Design Pattern - FACADE
+>>>>>>> Pierreleproducode
+>>>>>>> b8aa0a8efb741c3714461b5102e68466170cc61b
 
     Description du design pattern
 
