@@ -16,6 +16,9 @@ Les objets qui observent les changements d'état sont appelés observateurs (obs
 -   Il permet aussi une gestion simplifiée d'observateurs multiples sur un même objet observable. 
 -   Optimisation du code
 
+#####   Diagramme de classe :
+
+![diagramme de classe](https://user-images.githubusercontent.com/49645443/58785786-88774180-85e6-11e9-9714-4bad2be02a27.png)
 
 ### Implementation
 
