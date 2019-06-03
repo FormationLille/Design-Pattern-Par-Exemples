@@ -1,6 +1,6 @@
-# Mon tutoriel de Design Pattern - Factory Method - By Antonin Guibourg
+# Mon tutoriel de Design Pattern - Flyweight
 
-    Description du design pattern
+   Ce tuto va être créer par le magnifique Clément Renault
 
 # Implementation
 

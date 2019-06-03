@@ -1,4 +1,6 @@
-# Mon tutoriel de Design Pattern - Factory Method - By Antonin Guibourg
+# Mon tutoriel de Design Pattern - Chain Of Respon
+# by Yann 
+
 
     Description du design pattern
 

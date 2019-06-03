@@ -1,4 +1,4 @@
-# Mon tutoriel de Design Pattern - Factory Method - By Antonin Guibourg
+# Mon tutoriel de Design Pattern - Design pattern State by Noemie
 
     Description du design pattern
 

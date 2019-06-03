@@ -1,4 +1,5 @@
-# Mon tutoriel de Design Pattern - Factory Method - By Antonin Guibourg
+# Mon tutoriel de Design Pattern - Observer
+Chadia EL AMRANI
 
     Description du design pattern
 
