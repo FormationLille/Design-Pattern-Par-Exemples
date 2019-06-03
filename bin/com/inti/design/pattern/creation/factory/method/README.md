@@ -13,6 +13,8 @@ et faisons référence au nouvel objet créé à l'aide d'une interface commune.
 
 Nous allons créer une interface Shape et des classes concrètes implémentant l' interface Shape.
 
+![diag](https://user-images.githubusercontent.com/49645533/58785806-988f2100-85e6-11e9-99fd-0f369378b106.png)
+
 Notre classe de démonstration "FactoryPatternDemo" utilisera ShapeFactory pour obtenir un objet Shape.
 Il transmettra les informations ( CIRCLE / RECTANGLE / SQUARE ) à ShapeFactory pour obtenir le type d'objet dont il a besoin.
 
