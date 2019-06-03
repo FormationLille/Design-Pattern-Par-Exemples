@@ -4,17 +4,17 @@
 
 
 Le design pattern **Flyweight** est un design pattern de structure.
-Il est utilise pour diminuer l'utilisation de la mémoire et augmenter la performance. 
+Il est utilise pour diminuer l'utilisation de la mÃ©moire et augmenter la performance. 
 Cela est permit grace a une diminution du nombre d'objets crees. 
-Ce design pattern essaye de reutiliser des types d'objets similaires déjà existants et les stocks. 
+Ce design pattern essaye de reutiliser des types d'objets similaires dÃ©jÃ  existants et les stocks. 
 Il en cree de nouveaux quand aucun objets ne corresponds. 
 
 # Implementation
 
 Cette description est difficilement comprehensible a brut pour point. 
-C'est pourquoi, voici un exemple !
+C'est pourquoi, voici un exempleÂ !
 
-Dans cette exemple nous allons creer : 
+Dans cette exemple nous allons creerÂ : 
 
 Quoi? | Nom | Pourquoi?
 ------------ | ------------- | -------------
@@ -29,7 +29,7 @@ NB : Application est appelee FlyweightPatternDemo dans le diagramme de classe ci
 ![Diagramme de classe de l'exemple pour le design pattern FlyWeight](https://www.tutorialspoint.com/design_pattern/images/flyweight_pattern_uml_diagram.jpg)
 
 _ShapeFactory_ a une Hashmap de _Circle_ ayant pour clef la couleur des objets _Circle_. 
-De cette façon, a chaque fois qu'une requete demande de cree un cercle d'une certaine couleur, 
+De cette faÃ§on, a chaque fois qu'une requete demande de cree un cercle d'une certaine couleur, 
 _ShapeFactory_  recherche dans la Hashmap, si un objet similaire est trouve, 
 il le renvoie au client sinon il en cree un nouveau, le stock dans la Hashmap et l'envoie au client.
 _Application_ va utiliser _ShapeFactory_ pour obtenir un objet _Shape_, il donnera les 
@@ -40,15 +40,17 @@ caracteristiques a _ShapeFactory_ pour obtenir le cercle de la couleur demandee.
 
 Creez une interface _Shape_ :
 
+```java
     public interface Shape {
     	void draw();
     }
-
+```
 
 ### Etape 2
 
 Creez une classe _Circle_ implmentant l'interface :
 
+```java
     package com.inti.design.pattern.structure.flyweight;
 
     public class Circle implements Shape {
@@ -78,12 +80,13 @@ Creez une classe _Circle_ implmentant l'interface :
           System.out.println("Circle: Draw() [Color : " + color + ", x : " + x + ", y :" + y + ", radius :" + radius);
        }
     }
-
+```
 
 ### Etape 3
 
 Creez une usine _ShapeFactory_ qui genere des objets de la classe precedente en utilisant des informations donnees :
 
+```java
     package com.inti.design.pattern.structure.flyweight;
     
     import java.util.HashMap;
@@ -106,12 +109,13 @@ Creez une usine _ShapeFactory_ qui genere des objets de la classe precedente en 
           return circle;
        }
     }
-
+```
 
 ### Etape 4
 
 Utilisez l'usine pour obtenir des objets en donnant des informations tel que la couleur :
 
+```java
     package com.inti.design.pattern.structure.flyweight;
     
     public class Application {
@@ -136,12 +140,13 @@ Utilisez l'usine pour obtenir des objets en donnant des informations tel que la 
           return (int)(Math.random()*100);
        }
     }
-
+```
 
 ### Etape 5
 
 Le resultat attendu est :
 
+```java
     Creating circle of color : Black
     Circle: Draw() [Color : Black, x : 36, y :71, radius :100
     Creating circle of color : Green
@@ -167,7 +172,7 @@ Le resultat attendu est :
     Circle: Draw() [Color : Green, x : 38, y :93, radius :100
     Circle: Draw() [Color : Red, x : 76, y :82, radius :100
     Circle: Draw() [Color : Blue, x : 95, y :82, radius :100
-
+```
 
 ### Source :
 
