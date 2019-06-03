@@ -1,27 +1,9 @@
 # Tutoriel de Design Pattern - Prototype
 
-<<<<<<< HEAD
-    Auteur : Romain Parisot
-    
-    Description du design pattern
-
-# Implementation
-
-Description du contexte de l'exemple
-
-
-Mettre le diagramme de classes
-
-- Ca c'est pour mettre en points
-
-*Ca c'est pour mettre en italique*
-
-=======
-<<<<<<< HEAD
 Auteur : Romain Parisot
     
 Le but du design pattern Prototype est de pouvoir facilement copier un objet déjà instancié. Plutôt que de créer un nouvel objet et de l'instancier avec les mêmes paramètres que l'objet à copier, on clone directement l'objet, à la manière de la mitose des cellules.
-Celà permet une économie de ressources car on évite la création classique d'objets pour une méthode plus optimisée. C'est une meilleure méthode pour créer des objets, notamment lorsque la création de ceux-ci fait intervenir des méthodes coûteuses comme par exemple l'accès à une base de données.
+Cela permet une économie de ressources car on évite la création classique d'objets pour une méthode plus optimisée. C'est une meilleure méthode pour créer des objets, notamment lorsque la création de ceux-ci fait intervenir des méthodes coûteuses comme par exemple l'accès à une base de données.
 
 # Implementation
 
@@ -55,7 +37,7 @@ Heuresement, notre ingénieur a mis au point un nouveau type de Burger ! Les bur
 public class Burger implements Cloneable
 ```
 
-Grâce a ses Burgers et à leur méthode clone(), tout va devenir plus simple !
+Grâce à ses Burgers et à leur méthode ```clone()```, tout va devenir plus simple !
 ```java
 // Méthode de clonage du burger
 @Override
@@ -71,18 +53,19 @@ public Object clone() {
 ```
 
 ## Etape 3 : Le clonage de masse
-En effet, cette methode permet à un burger de créer une copie de lui-même. Ceci permet un gain de temps considérable, car il nous suffit désormais de créer un seul burger et on se contentera de le cloner pour chaque client.
+En effet, cette methode permet à un burger de créer une copie de lui-même. Ceci permet un gain de temps considérable, car il nous suffit désormais de créer un seul burger type et on se contentera de le cloner pour chaque client.
 ```java
-for(client : clients){
+for(Client monClient : clients){
     Burger monBurger = burgerType.clone();
 }
 ```
 
 # Conclusion
 Le design pattern Prototype permet de cloner un objet afin d'éviter de recréer l'objet de zéro. il permet une optimisation des performances du programme.
-Pour implémenter ce designe pattern en Java, in suffit de déclarer la classe que l'on souhaite cloner comme clonnable et de lui donner la méthode appropriée :
+Pour implémenter ce design pattern en Java, il suffit de déclarer la classe que l'on souhaite cloner comme ```cloneable``` et de lui donner la méthode appropriée :
 ```java
 public class Burger implements Cloneable {
+
     // Méthode de clonage du burger
     @Override
     public Object clone() {
@@ -97,41 +80,9 @@ public class Burger implements Cloneable {
 }
 ```
 
-Attention : il faut bien penser à créer la méthode clone() car elle n'est pas utilisable directement. Le modèle ci-dessus est la version générique de la méthode.
-tous les objets ne peuvent pas non plus être clonnable, il faut donc être prudent et vérifier ce que l'on fait. Dans le cas où votre classe possède un attribut non immuable et non clonable,vous pouvez vous retrouver dans le cas où vos deux objet (original et clone) possède le même attribut (même instance).
-=======
-    Auteur : Romain Parisot
-    
-    Description du design pattern
+Attention : il faut bien penser à créer la méthode ```clone()``` car elle n'est pas utilisable directement. Le modèle ci-dessus est la version générique de la méthode.
+Tous les objets ne peuvent pas non plus être clonnable, il faut donc être prudent et vérifier ce que l'on fait. Dans le cas où votre classe possède un attribut non immuable et non clonable,vous pouvez vous retrouver dans le cas où vos deux objet (original et clone) possèdent le même attribut (même instance).
 
-# Implementation
-
-Description du contexte de l'exemple
-
-
-Mettre le diagramme de classes
-
-- Ca c'est pour mettre en points
-
-*Ca c'est pour mettre en italique*
-
->>>>>>> b8aa0a8efb741c3714461b5102e68466170cc61b
-> Ca c'est pour mettre en forme
-
-### Etape 1
-
-Mettre le code des classes principales
-
-### Etape 2
-
-Mettre le nombre d'etapes que vous souhaitez vis-à-vis de votre design pattern, en faisant le template je peux pas deviner combien il en faut.
-
-### Etape finale
-
-Faites un calin aux gens que vous aimez, c'est important.
-
-Lien pour avoir tous les trucs de mise en page qu'il faut : https://guides.github.com/features/mastering-markdown/
-<<<<<<< HEAD
-=======
->>>>>>> Pierreleproducode
->>>>>>> b8aa0a8efb741c3714461b5102e68466170cc61b
+# Sites utiles :
+- https://gameprogrammingpatterns.com/prototype.html
+- https://ydisanto.developpez.com/tutoriels/java/cloneable/
