@@ -24,9 +24,9 @@ Créez une interface.
 
 Shape.java
 
-public interface Shape {
-   void draw();
-}
+    public interface Shape {
+    void draw();
+    }
 
 ### Etape 2
 
@@ -34,33 +34,30 @@ Créez des classes concrètes implémentant la même interface.
 
 Rectangle.java
 
-public class Rectangle implements Shape {
-
-   @Override
-   public void draw() {
-      System.out.println("Inside Rectangle::draw() method.");
-   }
-}
+    public class Rectangle implements Shape {
+    @Override
+    public void draw() {
+    System.out.println("Inside Rectangle::draw() method.");
+    }
+    }
 
 Square.java
 
-public class Square implements Shape {
-
-   @Override
-   public void draw() {
-      System.out.println("Inside Square::draw() method.");
-   }
-}
+    public class Square implements Shape {
+    @Override
+    public void draw() {
+    System.out.println("Inside Square::draw() method.");
+    }
+    }
 
 Circle.java
 
-public class Circle implements Shape {
-
-   @Override
-   public void draw() {
-      System.out.println("Inside Circle::draw() method.");
-   }
-}
+    public class Circle implements Shape {
+    @Override
+    public void draw() {
+    System.out.println("Inside Circle::draw() method.");
+    }
+    }
 
 ### Etape 3
 
@@ -68,12 +65,11 @@ Créez une classe pour générer un objet de classe concrète en fonction d'info
 
 ShapeFactory.java
 
-public class ShapeFactory {
-        
-  
-   public Shape getShape(String shapeType){
-      if(shapeType == null){
-         return null;
+    public class ShapeFactory {
+      
+    public Shape getShape(String shapeType){
+     if(shapeType == null){
+     return null;
       }         
       if(shapeType.equalsIgnoreCase("CIRCLE")){
          return new Circle();
@@ -86,8 +82,8 @@ public class ShapeFactory {
       }
       
       return null;
-   }
-}
+      }
+      }
 
 ### Etape 4
 
@@ -95,37 +91,31 @@ Utilisez Factory pour obtenir un objet de classe concrète en transmettant une i
 
 FactoryPatternDemo.java
 
-public class FactoryPatternDemo {
+    public class FactoryPatternDemo {
 
-   public static void main(String[] args) {
-   
-      ShapeFactory shapeFactory = new ShapeFactory();
+    public static void main(String[] args) {
+    ShapeFactory shapeFactory = new ShapeFactory();
      
-     Shape shape1 = shapeFactory.getShape("CIRCLE");
-    
-      shape1.draw();
+    Shape shape1 = shapeFactory.getShape("CIRCLE");
+    shape1.draw();
 
-    
-      Shape shape2 = shapeFactory.getShape("RECTANGLE");
+    Shape shape2 = shapeFactory.getShape("RECTANGLE");
 
-    
-      shape2.draw();
+    shape2.draw();
 
-    
-      Shape shape3 = shapeFactory.getShape("SQUARE");
+    Shape shape3 = shapeFactory.getShape("SQUARE");
 
-    
-      shape3.draw();
-   }
-}
+    shape3.draw();
+    }
+    }
 
 
 ### Etape finale
 
-    faites les tests.
+faites les tests.
 
-Inside Circle::draw() method.
+    Inside Circle::draw() method.
 
-Inside Rectangle::draw() method.
+    Inside Rectangle::draw() method.
 
-Inside Square::draw() method.
+    Inside Square::draw() method.
