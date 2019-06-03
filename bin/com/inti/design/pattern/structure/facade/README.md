@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Mon tutoriel de Design Pattern - FACADE FACADE
-=======
-# Mon tutoriel de Design Pattern - FACADE
->>>>>>> Pierreleproducode
 
     Description du design pattern
 
