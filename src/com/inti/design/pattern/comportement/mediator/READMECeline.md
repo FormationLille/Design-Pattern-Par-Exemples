@@ -224,4 +224,21 @@ package adaming.com;
 
     }
 ```
+### Resultat
+```
+Collègue nom=C1, Envoi de message
+-------- Début Médiateur -------
+Enregistrement du message
+Transmission du message
+From :C1
+To :C2
+----------------------
+Collègue nom=C2, Réception du message
+From :C1
+Contenu:je suis à 20 m
+Traitement du message par .....C2
+----------------------
+-------- Fin Médiateur -------
+----------------------
+```
 Lien pour avoir tous les trucs de mise en page qu'il faut : https://guides.github.com/features/mastering-markdown/
