@@ -1,4 +1,4 @@
-# Tutoriel de Design Pattern - Iterator
+﻿# Tutoriel de Design Pattern - Iterator
 
 Auteur : Florian Libre
 
@@ -14,10 +14,13 @@ On peut faire le rapprochement avec le pointeur avec ses 3 propriétés :
 -	L’épuisement du conteneur (la collection) 
 
 On utilise pour cela l’interface Iterator qui contient plusieurs méthodes :
--	public boolean hasNext() : Retourne true s’il y a encore des objets dans la collection
+-	public boolean hasNext() : Retourne true s’il y a encore des objets dans la collectiotn
 -	public Object next() : retourne le prochain objet de la collection (sous réserve que la méthode hasNext() retourne true).
 -	public void remove() : supprime l’objet actuel
 
+### Diagramme de classes :
+
+![iterator_pattern_uml_diagram](https://user-images.githubusercontent.com/49645577/58784889-b3609600-85e4-11e9-878f-39dd31c0dd6f.png)
 
 ### Etape 1
 
