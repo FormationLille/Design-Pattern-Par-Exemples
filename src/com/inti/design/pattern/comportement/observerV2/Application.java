@@ -17,9 +17,9 @@ public class Application {
 		lobservable.addObserver(obs1);
 		lobservable.addObserver(obs2);
 
-		lobservable.setEtat(1);
-		lobservable.setEtat(5);
+		lobservable.setTemperature(1);
+		lobservable.setTemperature(5);
 		lobservable.removeObserver(obs2);
-		lobservable.setEtat(10);
+		lobservable.setTemperature(10);
 	}
 }

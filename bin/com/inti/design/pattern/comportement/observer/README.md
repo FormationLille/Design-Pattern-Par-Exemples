@@ -1,113 +1,106 @@
+#### Building for source
 # Mon tutoriel de Design Pattern - Observer
 Chadia EL AMRANI
 
-    Description du design pattern
+###  Description du design pattern
 
-    Le design pattern Observer est utilisé pour envoyer un signal à des modules qui jouent le rôle d'observateurs.
-En cas de notification, les observateurs effectuent alors l'action adéquate en fonction des informations qui parviennent depuis les modules qu'ils observent (les observables ou les sujets).
+Le design pattern Observer est utilisÃ© pour envoyer un signal Ã  des modules qui jouent le rÃ´le d'observateurs.
+En cas de notification, les observateurs effectuent alors l'action adÃ©quate en fonction des informations qui parviennent depuis les modules qu'ils observent (les observables ou les sujets).
 
-Le design pattern observer définit une dépendance un à plusieurs (One-to-Many) entre les objets de sorte que lorsqu'un objet change d'état, tous ses dépendants sont notifiés et mis à jour automatiquement.
-L'objet surveillé s'appelle le sujet ou l’observable.
-Les objets qui observent les changements d'état sont appelés observateurs (observers en anglais).
+Le design pattern observer dÃ©finit une dÃ©pendance un Ã  plusieurs (One-to-Many) entre les objets de sorte que lorsqu'un objet change d'Ã©tat, tous ses dÃ©pendants sont notifiÃ©s et mis Ã  jour automatiquement.
+L'objet surveillÃ© s'appelle le sujet ou lâ€™observable.
+Les objets qui observent les changements d'Ã©tat sont appelÃ©s observateurs (observers en anglais).
 
-Avanntages:
+#####    Ses avantages:
+-   On peut crÃ©er une multitude d'observateurs diffÃ©rents. Ils n'auront aucun lien entre eux et pourront avoir des tÃ¢ches complÃ¨tements diffÃ©rentes. 
+-   Il permet aussi une gestion simplifiÃ©e d'observateurs multiples sur un mÃªme objet observable. 
+-   Optimisation du code
 
--On peut créer une multitude d'observateurs différents. Ils n'auront aucun lien entre eux et pourront avoir des tâches complètements différentes. 
--Il permet aussi une gestion simplifiée d'observateurs multiples sur un même objet observable. 
--Optimisation du code
 
+### Implementation
 
-# Implementation
+##### Description du contexte de l'exemple
 
-Description du contexte de l'exemple
+Nous pouvons prendre lâ€™exemple d'une station mÃ©tÃ©orologique. m lâ€™affichage de la tempÃ©rature actuelle et celle ressentie en fonction de la tempÃ©rature mesurÃ©e.
+Nous pouvons avoir une partie A dans notre application qui affiche sur un Ã©cran la tempÃ©rature actuelle.
+Et une partie B qui affiche la tempÃ©rature ressentie.
+Pour rÃ©agir aux changements de tempÃ©rature, les parties A et B sâ€™enregistreront doncÂ , en tant quâ€™observateur.
+Si la tempÃ©rature est modifiÃ©e, un Ã©vÃ©nement est dÃ©clenchÃ©.
+Cet Ã©vÃ¨nement est envoyÃ© Ã  tous les observateurs. 
+Ces derniers reÃ§oivent donc, les donnÃ©es modifiÃ©es et peuvent ajuster leurs affichages en fonction de ces donnÃ©es.
 
-Nous pouvons prendre l’exemple d'une station météorologique. m l’affichage de la température actuelle et celle ressentie en fonction de la température mesurée.
-Nous pouvons avoir une partie A dans notre application qui affiche sur un écran la température actuelle.
-Et une partie B qui affiche la température ressentie.
-Pour réagir aux changements de température, les parties A et B s’enregistreront donc , en tant qu’observateur.
-Si la température est modifiée, un événement est déclenché.
-Cet évènement est envoyé à tous les observateurs. 
-Ces derniers reçoivent donc, les données modifiées et peuvent ajuster leurs affichages en fonction de ces données.
-
-Remarque : Les observateurs peuvent récupérer le ou les états de l'observable via des fonctions, accesseurs de celui-ci ; 
-cette solution est nommée « TIRER ». Les observateurs vont donc, tirer les informations de l'observable.
- Mais une seconde variante existe, celle-ci est nommée « POUSSER ».
-  À l'inverse de la première, c'est l'observable qui va fournir les informations aux observateurs lors de la modification de l'état.
+RemarqueÂ : Les observateurs peuvent rÃ©cupÃ©rer le ou les Ã©tats de l'observable via des fonctions, accesseurs de celui-ciÂ .
+cette solution est nommÃ©e Â«Â TIRERÂ Â». Les observateurs vont donc, tirer les informations de l'observable.
+ Mais une seconde variante existe, celle-ci est nommÃ©e Â«Â POUSSERÂ Â».
+  Ã€ l'inverse de la premiÃ¨re, c'est l'observable qui va fournir les informations aux observateurs lors de la modification de l'Ã©tat.
    Nous allons maintenant voir la mise en place de ce Design Pattern avec ses deux variantes.
 
-####Observer : version « tirer »
-Dans cette version, ce sont les observateurs qui récupèrent le ou les état(s) de l'observable. 
-### Création des interfaces
+#### ObserverÂ : version Â«Â TirerÂ Â»
 
-On commence par créer l'interface de l'observable ou du sujet:
+Dans cette version, ce sont les observateurs qui rÃ©cupÃ¨rent le ou les Ã©tat(s) de l'observable. 
 
-l’interface observable contient généralement 3 méthodes :
-    • add () : pour enregistrer ou inscrire l’observateur dans l’observable (afin qu’il puisse lui envoyer des notifications)
-    • remove() : Pour désinscrire l’observateur
-    • notify() : Pour envoyer des notifications à l’observateur.
+##### CrÃ©ation des interfaces
 
-On peut donc ajouter/retirer un observateur à tout moment sans bien sûr affecter le code des classes existantes.
+On commence par crÃ©er l'interface de l'observable ou du sujet:
+
+lâ€™interface observable contient gÃ©nÃ©ralement 3 mÃ©thodesÂ :
+    â€¢ addÂ () : pour enregistrer ou inscrire lâ€™observateur dans lâ€™observable (afin quâ€™il puisse lui envoyer des notifications)
+    â€¢ remove()Â : Pour dÃ©sinscrire lâ€™observateur
+    â€¢ notify()Â : Pour envoyer des notifications Ã  lâ€™observateur.
+
+On peut donc ajouter/retirer un observateur Ã  tout moment sans bien sÃ»r affecter le code des classes existantes.
 
 
     package com.inti.design.pattern.comportement.observer;
 
-public interface IObservable {
+    public interface IObservable {
 
-	public void addObserver(IObserver o);
+    	public void addObserver(IObserver o);
 
-	public void removeObserver(IObserver o);
+	    public void removeObserver(IObserver o);
 
-	public void notifyObservers();
+    	public void notifyObservers();
 
-}
-
-
-
-L’interface observateur contient une seule méthode qui lui permet d’actualiser ses données : 
-    • La méthode update() 
-
-
-package com.inti.design.pattern.comportement.observer;
-
-public interface IObserver {
-
-	public void update(IObservable o);
-}
+    }
 
 
 
+Lâ€™interface observateur contient une seule mÃ©thode qui lui permet dâ€™actualiser ses donnÃ©esÂ : 
+    â€¢ La mÃ©thode update()Â 
 
-### Implémentation des interfaces
+    package com.inti.design.pattern.comportement.observer;
+    public interface IObserver {
+    	public void update(IObservable o);
+    }
 
-    Nous allons maintenant implémenter ces deux interfaces.
-Pour cela, créer une classe ObservableConcret pour implémenter l’interface observable, et une autre classe ObservateurConcretImpl1 afin d’implémenter l’interface observateur.
+##### ImplÃ©mentation des interfaces
 
-    # La classe ObservableConcret:
-    Comme dit plus haut, nous avons une relation entre l’observable et l’observateur de type One-to-Many (Pour un observable, nous pouvons avoir plusieurs observateurs). Par conséquent, dans la classe ObservableConcret nous allons créer une collection d’observateurs.
-L’attribut etat est accessible via un accesseur en lecture.
-La méthode notifierObservateurs () déclenche l’appel de actualise(observable) pour chaque observateur abonné.
+  Nous allons maintenant implÃ©menter ces deux interfaces.
+Pour cela, crÃ©er une classe ObservableConcret pour implÃ©menter lâ€™interface observable, et une autre classe ObservateurConcretImpl1 afin dâ€™implÃ©menter lâ€™interface observateur.
 
-package com.inti.design.pattern.comportement.observer;
+##### La classe ObservableConcret:
+ Comme dit plus haut, nous avons une relation entre lâ€™observable et lâ€™observateur de type One-to-Many (Pour un observable, nous pouvons avoir plusieurs observateurs). Par consÃ©quent, dans la classe ObservableConcret nous allons crÃ©er une collection dâ€™observateurs.
+Lâ€™attribut etat est accessible via un accesseur en lecture.
+La mÃ©thode notifierObservateurs () dÃ©clenche lâ€™appel de actualise(observable) pour chaque observateur abonnÃ©.
 
-import java.util.ArrayList;
-import java.util.List;
+    package com.inti.design.pattern.comportement.observer;
 
-public class ObservableConcret implements IObservable {
+    import java.util.ArrayList;
+    import java.util.List;
 
-	private List<IObserver> observers = new ArrayList<>();
+    public class ObservableConcret implements IObservable {
 
-	private int etat;
+    	private List<IObserver> observers = new ArrayList<>();
+    	private int temperature;
 
 	@Override
 	public void addObserver(IObserver o) {
 		observers.add(o);
-
-	}
+	    }
 
 	@Override
 	public void removeObserver(IObserver o) {
 		observers.remove(o);
-
 	}
 
 	@Override
@@ -115,75 +108,60 @@ public class ObservableConcret implements IObservable {
 
 		for (IObserver o : observers) {
 			o.update(this);
-
 		}
-
 	}
 
-	public int getEtat() {
-		return etat;
+	public int getTemperature() {
+		return temperature;
 	}
 
-	public void setEtat(int etat) {
-		this.etat = etat;
-
+	public void setTemperature(int temperature) {
+		this.temperature = temperature;
 		notifyObservers();
 	}
-
-}
-
-
-Remarque: La méthode update () doit être appelée lorsque l'état change.
+    }
 
 
-    # Les classes observateurs:
+Remarque: La mÃ©thode update () doit Ãªtre appelÃ©e lorsque l'Ã©tat change.
+
+
+ ##### Les classes observateurs:
+
+    package com.inti.design.pattern.comportement.observer;
+    
+    public class ObserverConcretImpl1 implements IObserver {
+    
+	@Override
+	public void update(IObservable o) {
+		int etat = ((ObservableConcret) o).getTemperature();
+		System.out.println("Tempï¿½rature actuelle: " + etat + "ï¿½C");
+	}
+    }
+
+Nous pouvons ajouter un autre observateur en crÃ©ant la classe ObservateurConcretImpl2
 
     package com.inti.design.pattern.comportement.observer;
 
-public class ObserverConcretImpl1 implements IObserver {
+    public class ObserverConcretImpl2 implements IObserver {
 
 	@Override
 	public void update(IObservable o) {
-
-		int etat = ((ObservableConcret) o).getEtat();
-
-		System.out.println("Température actuelle: " + etat + "°C");
-
+		int etat = ((ObservableConcret) o).getTemperature();
+		System.out.println("  TempÃ©rature ressentie " + (etat - 2));
 	}
-
-}
-
+    }
 
 
-Nous pouvons ajouter un autre observateur en créant la classe ObservateurConcretImpl2
+##### Lancement de l'application
 
+Nous allons maintenant crÃ©er la classe Application pour tester notre code.
+Nous commenÃ§ons par instancier les classes ObservableConcret, ObserverConcretimpl1 et ObserverConcretImpl2, pour crÃ©er un observable et des observateurs.
 
-package com.inti.design.pattern.comportement.observer;
+Supposons que l'observateur change d'Ã©tat, que va-t-il se passer ?
 
-public class ObserverConcretImpl2 implements IObserver {
+    import com.inti.design.pattern.comportement.observer.ObserverConcretImpl1;
 
-	@Override
-	public void update(IObservable o) {
-
-		int etat = ((ObservableConcret) o).getEtat();
-
-		System.out.println("  Température ressentie " + (etat - 2));
-	}
-
-}
-
-
-### Lancement de l'application
-
-Nous allons maintenant créer la classe Application pour tester notre code.
-Nous commençons par instancier les classes ObservableConcret, ObserverConcretimpl1 et ObserverConcretImpl2, pour créer un observable et des observateurs.
-
-
-Supposons que l'observateur change d'état, que va-t-il se passer ?
-
-import com.inti.design.pattern.comportement.observer.ObserverConcretImpl1;
-
-public class Application {
+    public class Application {
 
 	public static void main(String[] args) {
 
@@ -191,16 +169,14 @@ public class Application {
 		ObserverConcretImpl1 obs1 = new ObserverConcretImpl1();
 		ObserverConcretImpl2 obs2 = new ObserverConcretImpl2();
 
-		lobservable.setEtat(10);
-
+		lobservable.setTemperature(10);
 	}
-}
+    }
 
-Nous remarquons que rien ne s’affiche, ce qui est normal.
-Les observateurs sont crées mais pas encore inscrits dans l’observable.
+Nous remarquons que rien ne sâ€™affiche, ce qui est normal. Les observateurs sont crÃ©es mais pas encore inscrits dans lâ€™observable.
 
-import com.inti.design.pattern.comportement.observer.ObserverConcretImpl1;
-public class Application {
+    import com.inti.design.pattern.comportement.observer.ObserverConcretImpl1;
+    public class Application {
 
 	public static void main(String[] args) {
 
@@ -211,22 +187,21 @@ public class Application {
 		lobservable.addObserver(obs1);
 		lobservable.addObserver(obs2);
 
-		lobservable.setEtat(1);
-		lobservable.setEtat(5);
-
+		lobservable.setTemperature(1);
+		lobservable.setTemperature(5);
 	}
 
-nous remarquons qu’à chaque changement d’état, les deux observateurs sont informés.
+A chaque changement dâ€™Ã©tat, les deux observateurs sont informÃ©s.
 
-Nous pouvons désinscrire un des deux observateurs grâce à la méthode remove(), dans ce cas-là il ne sera pas notifé, et nous n'aurons pas la température ressentie.
+Nous pouvons dÃ©sinscrire un des deux observateurs grÃ¢ce Ã  la mÃ©thode remove(), dans ce cas-lÃ  il ne sera pas notifÃ©, et nous n'aurons pas la tempÃ©rature ressentie.
 
-package com.inti.design.pattern.comportement.observer;
+    package com.inti.design.pattern.comportement.observer;
 
-import com.inti.design.pattern.comportement.observer.ObservableConcret;
-import com.inti.design.pattern.comportement.observer.ObserverConcretImpl2;
-import com.inti.design.pattern.comportement.observer.ObserverConcretImpl1;
+    import com.inti.design.pattern.comportement.observer.ObservableConcret;
+    import com.inti.design.pattern.comportement.observer.ObserverConcretImpl2;
+    import com.inti.design.pattern.comportement.observer.ObserverConcretImpl1;
 
-public class Application {
+    public class Application {
 
 	public static void main(String[] args) {
 
@@ -244,14 +219,44 @@ public class Application {
 		lobservable.removeObserver(obs2);
 		lobservable.setEtat(10);
 	}
-}
+    }
 
 
+#### ObserverÂ : version Â«Â PousserÂ Â»
 
 
-####Observer : version « tirer »
+Dans cette version, c'est l'observable qui met Ã  disposition son/ses Ã©tat(s) aux observateurs. Dans ce paragraphe, nous n'allons pas revoir l'ensemble du code des classes, mais uniquement les parties qui varient par rapport Ã  la version Â«Â TirerÂ Â».
+
+Modification de la signature de la fonction actualiser, afin de transmettre la valeur de l'etat acrtuel (=temperature).
+
+    package com.inti.design.pattern.comportement.observerV2;
+
+    public interface IObserver {
+	public void update(int etat);
+    }
+
+Nous devons modifier la mÃ©thode notifyObservers() Ã©galement, pour faire appel Ã  la nouvelle mÃ©thode update.
+
+	@Override
+	public void notifyObservers() {
+
+		for (IObserver o : observers) {
+			o.update(temperature);
+		}
+	}
 
 
-ans cette version, c'est l'observable qui met à disposition son/ses état(s) aux observateurs.. Dans ce paragraphe, nous n'allons pas revoir l'ensemble du code des classes, mais uniquement les parties qui varient par rapport à la version « POUSSER ».
-Modification de la signature de la fonction actualiser.
+GrÃ¢ce Ã  cette mÃ©thode, nous n'avons plus besoin d'aller chercher la valeur de l'etat d'oÃ¹ la suppression de la ligne d'avant:
+
+    @Override
+	public void update(int etat) {
+		System.out.println("TempÃ©rature actuelle: " + etat + "Â°C");
+	}
+
+   En exÃ©cutant l'application, nous remarquons que le rÃ©sultat reste le mÃªme qu'avec la mÃ©thode "tirer".
+
+### Conclusion:
    
+  Ce design pattern nous facilite certaines tÃ¢ches de dÃ©veloppement.
+Il nous Ã©pargne les difficultÃ©s de coder par nous-mÃªme les notifications entre objets.
+Le desig pattern Observer Ã©vite le recours Ã  des mÃ©canismes d'interrogation coÃ»teux, dans la mesure oÃ¹ l'observateur demande en permanence (et inutilement) des mises Ã  jour.

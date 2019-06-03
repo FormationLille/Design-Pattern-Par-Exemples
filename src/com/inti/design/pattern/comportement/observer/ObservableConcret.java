@@ -7,7 +7,7 @@ public class ObservableConcret implements IObservable {
 
 	private List<IObserver> observers = new ArrayList<>();
 
-	private int etat;
+	private int temperature;
 
 	@Override
 	public void addObserver(IObserver o) {
@@ -31,13 +31,12 @@ public class ObservableConcret implements IObservable {
 
 	}
 
-	public int getEtat() {
-		return etat;
+	public int getTemperature() {
+		return temperature;
 	}
 
-	public void setEtat(int etat) {
-		this.etat = etat;
-
+	public void setTemperature(int temperature) {
+		this.temperature = temperature;
 		notifyObservers();
 	}
 
