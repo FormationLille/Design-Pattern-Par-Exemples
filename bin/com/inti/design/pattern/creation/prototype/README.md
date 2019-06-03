@@ -1,6 +1,23 @@
 # Tutoriel de Design Pattern - Prototype
 
 <<<<<<< HEAD
+    Auteur : Romain Parisot
+    
+    Description du design pattern
+
+# Implementation
+
+Description du contexte de l'exemple
+
+
+Mettre le diagramme de classes
+
+- Ca c'est pour mettre en points
+
+*Ca c'est pour mettre en italique*
+
+=======
+<<<<<<< HEAD
 Auteur : Romain Parisot
     
 Le but du design pattern Prototype est de pouvoir facilement copier un objet déjà instancié. Plutôt que de créer un nouvel objet et de l'instancier avec les mêmes paramètres que l'objet à copier, on clone directement l'objet, à la manière de la mitose des cellules.
@@ -98,6 +115,7 @@ Mettre le diagramme de classes
 
 *Ca c'est pour mettre en italique*
 
+>>>>>>> b8aa0a8efb741c3714461b5102e68466170cc61b
 > Ca c'est pour mettre en forme
 
 ### Etape 1
@@ -113,4 +131,7 @@ Mettre le nombre d'etapes que vous souhaitez vis-à-vis de votre design pattern,
 Faites un calin aux gens que vous aimez, c'est important.
 
 Lien pour avoir tous les trucs de mise en page qu'il faut : https://guides.github.com/features/mastering-markdown/
+<<<<<<< HEAD
+=======
 >>>>>>> Pierreleproducode
+>>>>>>> b8aa0a8efb741c3714461b5102e68466170cc61b
