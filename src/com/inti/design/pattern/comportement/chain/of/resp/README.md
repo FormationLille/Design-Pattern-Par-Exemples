@@ -16,7 +16,7 @@ L'objectif ici est de renvoyer un message selon la demande du client. Le client 
  qui va faire appelle a la methode operation() du premier maillon de la chaine. pour cela on va definir une classe abstraite (maillon), 
  ainsi que 3 classes maillons (maillonA, maillonB, maillonC) qui sont des sous classes concretes qui definissent un maillon de la chaine. Chaque maillon a la responsabilite d'une partie d'un traitement.
 
-
+![Diagramme_de_Classe](https://user-images.githubusercontent.com/49645529/58784968-d9863600-85e4-11e9-9f25-7942e19f3ff4.PNG)
    
 ### Etape 1
 
