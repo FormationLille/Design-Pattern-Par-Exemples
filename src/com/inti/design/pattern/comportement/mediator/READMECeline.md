@@ -27,9 +27,10 @@ Le mediator va gérer les messages entre collègues.
 
 ### Etape 1 : Créer les classes principales
 	1) Créer la classe Message
+```
 	package adaming.com;
 
-public class Message {
+    public class Message {
 	private String message;
 	private String expediteur;
 	private String destinataire;
@@ -70,11 +71,11 @@ public class Message {
 	public void setDestinataire(String destinataire) {
 		this.destinataire = destinataire;
 	} 
-	
-
 }
+```
 
 2) Créer la classe Mediateur
+```
 package adaming.com;
 
 import java.util.HashMap;
@@ -88,36 +89,39 @@ public abstract void transmettreMessage(Message m);
 public void addCollegue(String ref, Collegue a) {
 	collegues.put(ref, a);
 }
-
 }
+```
 
 3) Créer la classe Collegue
+```
 package adaming.com;
 
-public abstract class Collegue {
+    public abstract class Collegue {
 	protected String name;
 	protected Mediateur mediateur;
 	
-public Collegue(String name, Mediateur mediateur) {
+    public Collegue(String name, Mediateur mediateur) {
 	this.name=name;
 	this.mediateur=mediateur;
 	mediateur.addCollegue(name, this);
 }
 
-public abstract void envoyerMessage(Message m);
+    public abstract void envoyerMessage(Message m);
 
-public abstract void recevoirMessage(Message m);
+    public abstract void recevoirMessage(Message m);
 }
+```
 
 4) créer la classe MediateurImpl
-package adaming.com;
+```
+    package adaming.com;
 
-import java.util.ArrayList;
-import java.util.List;
+    import java.util.ArrayList;
+    import java.util.List;
 
-public class MediateurImpl extends Mediateur{
+    public class MediateurImpl extends Mediateur{
 	
-private List<Message> conversations=new ArrayList<Message>();
+    private List<Message> conversations=new ArrayList<Message>();
 		
 	@Override
 	public void transmettreMessage(Message m) {
@@ -137,74 +141,76 @@ private List<Message> conversations=new ArrayList<Message>();
 			System.out.println(m.toString());
 	}
 	}
+```
 
 ### Etape 2 : Créer les classes CollegueA et CollegueB
 
  5) Créer la classe CollegueA
-package adaming.com;
+ ```
+    package adaming.com;
 
-public class CollegueA extends Collegue {
+    public class CollegueA extends Collegue {
 
-public CollegueA(String name, Mediateur mediateur) {
+    public CollegueA(String name, Mediateur mediateur) {
 	super(name, mediateur); 
-}
+    }
 
-@Override
-public void envoyerMessage(Message m) {
+    @Override
+    public void envoyerMessage(Message m) {
 	System.out.println("----------------------");
 	System.out.println("Collègue nom="+name+", Envoi de message");
 	m.setExpediteur(this.name);
 	mediateur.transmettreMessage(m);
 	System.out.println("----------------------");
-}
+    }
 
-@Override
-public void recevoirMessage(Message m) {
+    @Override
+    public void recevoirMessage(Message m) {
 	System.out.println("----------------------");
 	System.out.println("Collègue nom="+name+", Réception du message");
 	System.out.println("From :"+m.getExpediteur());
 	System.out.println("Contenu:"+m.getMessage());
 	System.out.println("Traitement du message par ....."+this.name);
 	System.out.println("----------------------");
-}
-
-}
-
+    }
+    }
+```
 6) Créer la classe CollegueB
-package adaming.com;
+```
+    package adaming.com;
 
-public class CollegueB extends Collegue {
+    public class CollegueB extends Collegue {
 
-public CollegueB(String name, Mediateur mediateur) {
+    public CollegueB(String name, Mediateur mediateur) {
 	super(name, mediateur); 
-}
+    }
 
-@Override
-public void envoyerMessage(Message m) {
+    @Override
+    public void envoyerMessage(Message m) {
 	System.out.println("----------------------");
 	System.out.println("Collègue nom="+name+", Envoi de message");
 	m.setExpediteur(this.name);
 	mediateur.transmettreMessage(m);
 	System.out.println("----------------------");
-}
+    }
 
-@Override
-public void recevoirMessage(Message m) {
+    @Override
+    public void recevoirMessage(Message m) {
 	System.out.println("----------------------");
 	System.out.println("Collègue nom="+name+", Réception du message");
 	System.out.println("From :"+m.getExpediteur());
 	System.out.println("Contenu:"+m.getMessage());
 	System.out.println("Traitement du message par ....."+this.name);
 	System.out.println("----------------------");
-}
-
-}
+    }
+    }
+ ```
 
 ### Etape finale : Créer la classe Application
+```
+    package adaming.com;
 
-package adaming.com;
-
-public class Application {
+    public class Application {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -216,5 +222,23 @@ public class Application {
 		
 	}
 
-}
+    }
+```
+### Resultat
+```
+Collègue nom=C1, Envoi de message
+-------- Début Médiateur -------
+Enregistrement du message
+Transmission du message
+From :C1
+To :C2
+----------------------
+Collègue nom=C2, Réception du message
+From :C1
+Contenu:je suis à 20 m
+Traitement du message par .....C2
+----------------------
+-------- Fin Médiateur -------
+----------------------
+```
 Lien pour avoir tous les trucs de mise en page qu'il faut : https://guides.github.com/features/mastering-markdown/
