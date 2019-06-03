@@ -2,24 +2,24 @@
 
 ***
 * Auteur : Antoine Storme
-* Date de dernière maj : 03/06/2019
+* Date de derniÃ¨re maj : 03/06/2019
 ***
 
 
-    Adapter permet à plusieurs entités incompatibles de s'utiliser ensemble, en créant un pont, 
-    une relation artificielle entre  ces entités.
+    Adapter permet Ã  plusieurs entitÃ©s incompatibles de s'utiliser ensemble, en crÃ©ant un pont, 
+    une relation artificielle entre  ces entitÃ©s.
 
 # Implementation
 
-    Voici quelques exemples de la vie courante représentant l'usage d'un adaptateur:
-    - Vous voyagez au Royaume-Uni et voulez brancher votre téléphone. La prise murale est différente de
-    votre prise "française" --> vous achetez un adaptateur.
-    - Vous souhaitez transferer des photos de votre carte mémoire microSD vers votre ordinateur --> Vous
-    insérez la carte dans un support adapté, permettant la lecture de la carte par l'ordinateur.
-    - Vous souhaitez savoir comment se déplace un chien, un oiseau et un humain. L'un court, l'autre conduis
+    Voici quelques exemples de la vie courante reprÃ©sentant l'usage d'un adaptateur:
+    - Vous voyagez au Royaume-Uni et voulez brancher votre tÃ©lÃ©phone. La prise murale est diffÃ©rente de
+    votre prise "franÃ§aise" --> vous achetez un adaptateur.
+    - Vous souhaitez transferer des photos de votre carte mÃ©moire microSD vers votre ordinateur --> Vous
+    insÃ©rez la carte dans un support adaptÃ©, permettant la lecture de la carte par l'ordinateur.
+    - Vous souhaitez savoir comment se dÃ©place un chien, un oiseau et un humain. L'un court, l'autre conduis
     alors que le dernier vole... Mais vous ne vous souvenez plus de qui fait quoi ! Un adaptateur avec un
-    nom de méthode "déplacement", qui vous renvois le moyen de déplacement, peu importe le nom spécifique
-    des méthodes.
+    nom de mÃ©thode "dÃ©placement", qui vous renvois le moyen de dÃ©placement, peu importe le nom spÃ©cifique
+    des mÃ©thodes.
 
 
     Mettre le diagramme de classes
@@ -27,20 +27,20 @@
 
 ### Etape 1
 
-    Dans l'exemple ci-dessous, nous allons étudier l'exemple d'une entreprise voulant créer un chargeur
-    universel pour téléphone. Notons cependant que tous les téléphones n'ont pas forcément les mêmes besoins...
-    Je vous laisse trouver la subtilité dans l'exemple ;).
+    Dans l'exemple ci-dessous, nous allons Ã©tudier l'exemple d'une entreprise voulant crÃ©er un chargeur
+    universel pour tÃ©lÃ©phone. Notons cependant que tous les tÃ©lÃ©phones n'ont pas forcÃ©ment les mÃªmes besoins...
+    Je vous laisse trouver la subtilitÃ© dans l'exemple ;).
     Nous allons avoir 5 classes, 1 interface, et 1 run.
     Mettre le code des classes principales
 
 ### Etape 2
 
-    Créer votre première classe, le chargeur, ainsi que notre interface.
+    CrÃ©er votre premiÃ¨re classe, le chargeur, ainsi que notre interface.
 
     Classe Chargeur: Chargeur.java
-    ```java
+```java
     public class Chargeur {
-        // le portable branché sur le chargeur
+        // le portable branchÃ© sur le chargeur
         private InterfaceChargeable telephone;
         // le voltage en sortie du chargeur
         private final int VOLTAGE = 10;
@@ -55,22 +55,22 @@
         }   
 
     }
-    ```
+ ```
 
     Interface: InterfaceChargeable.java
-    ```java
+ ```java
     public interface InterfaceChargeable {
 
 	    public void recharger(int volts);
     }
-    ```
+ ```
 
 ### Etape 3
 
-    Création des téléphones portables sur le marché:
+    CrÃ©ation des tÃ©lÃ©phones portables sur le marchÃ©:
 
-    Classe du premier téléphone: PortableSamSaoule.java
-    ```java
+    Classe du premier tÃ©lÃ©phone: PortableSamSaoule.java
+```java
     public class PortableSamSaoule {
 
         //Portable se chargeant avec du 5Volts.
@@ -79,10 +79,10 @@
             System.out.println("voltage : " + volts + "\n");
         }
     }
-    ```
+```
 
-    Classe du deuxième téléphone: PortableSonneEricSonne.java
-    ```java
+    Classe du deuxiÃ¨me tÃ©lÃ©phone: PortableSonneEricSonne.java
+```java
     public class PortableSonneEricSonne {
 
         //Portable se chargeant avec du 10Volts.
@@ -91,21 +91,21 @@
             System.out.println("voltage : " + volts + "\n");
         }
     }
-    ```
+```
 
-    Ok, donc maintenant, notre entreprise a créée son chargeur... Mais l'embout ne correspond à
-    aucun téléphone du marché ! 
+    Ok, donc maintenant, notre entreprise a crÃ©Ã©e son chargeur... Mais l'embout ne correspond Ã 
+    aucun tÃ©lÃ©phone du marchÃ© ! 
 
 ### Etape 4
 
-    Nous allons donc maintenant palier à ce problème, et créer (vous l'avez deviné je suis sûr) un Adaptateur !
+    Nous allons donc maintenant palier Ã  ce problÃ¨me, et crÃ©er (vous l'avez devinÃ© je suis sÃ»r) un Adaptateur !
     Enfin... plusieurs en fait !
 
-    Classe du premier adaptateur de téléphone: AdaptateurSamSaoule.java
-    ```java
+    Classe du premier adaptateur de tÃ©lÃ©phone: AdaptateurSamSaoule.java
+```java
     public class AdaptateurSamSaoule implements InterfaceChargeable {
 
-        //Référence du portable adapté
+        //RÃ©fÃ©rence du portable adaptÃ©
         private PortableSamSaoule telephone;
         
         public AdaptateurSamSaoule(PortableSamSaoule telephone) {
@@ -113,18 +113,18 @@
             this.telephone = telephone;
         }
 
-        //Méthode de rechargement, mais ATTENTION, ne nécéssite que 5 volts !
+        //MÃ©thode de rechargement, mais ATTENTION, ne nÃ©cÃ©ssite que 5 volts !
         public void recharger(int volts) {
             int nouveauVoltage = volts > 5 ? 5 : volts;
             this.telephone.chargerPortable(nouveauVoltage);
         }
     }
-    ```
-    Classe du deuxième adaptateur de téléphone: AdaptateurSonneEricSonne.java
-    ```java
+```
+    Classe du deuxiÃ¨me adaptateur de tÃ©lÃ©phone: AdaptateurSonneEricSonne.java
+```java
     public class AdaptateurSonneEricSonne implements InterfaceChargeable {
 
-        //Référence du portable adapté
+        //RÃ©fÃ©rence du portable adaptÃ©
         private PortableSonneEricSonne telephone;
             
         public AdaptateurSonneEricSonne(PortableSonneEricSonne telephone) {
@@ -136,24 +136,24 @@
             this.telephone.chargerBatteries(volts);
         }
     }
-    ```
-    Notons que nos adaptateurs doivent implémenter l'interface afin d'être en mesure de charger l'appareil.
+```
+    Notons que nos adaptateurs doivent implÃ©menter l'interface afin d'Ãªtre en mesure de charger l'appareil.
 
 
 ### Etape 5 
 
-    On crée le main: Main.java
+    On crÃ©e le main: Main.java
 
-    ```java
+```java
     public class Main {
 
         public static void main(String[] args) {
-            //Déclaration du chargeur.
+            //DÃ©claration du chargeur.
             Chargeur chargeur = new Chargeur();
             
             //************** Portable SonneEricSonne **************
             
-            //Déclaration du portable et de son adaptaateur.
+            //DÃ©claration du portable et de son adaptaateur.
             PortableSonneEricSonne portableSonne = new PortableSonneEricSonne();
             AdaptateurSonneEricSonne adaptateurSonne = new AdaptateurSonneEricSonne(portableSonne);
             
@@ -162,7 +162,7 @@
 
             //************** Portable SamSaoule **************
             
-            //Déclaration du portable et de son adaptateur.
+            //DÃ©claration du portable et de son adaptateur.
             PortableSamSaoule portableSam = new PortableSamSaoule();
             AdaptateurSamSaoule adaptateurSam = new AdaptateurSamSaoule(portableSam);
             
@@ -172,13 +172,13 @@
         }
 
     }
-    ```
+```
 
 ### Etape 6
 
-    Le résultat consolitique:
+    Le rÃ©sultat consolitique:
 
-    ```java
+```java
     Branchement d'un portable :
     ---------------------------
     Portable SonneEricSonne en charge
@@ -188,11 +188,11 @@
     ---------------------------
     Portable SamSaoul en charge
     voltage : 5
-    ```
+```
 
-### Etape 7 : Avez-vous remarqué ?
+### Etape 7 : Avez-vous remarquÃ© ?
 
-    Comment s'appelle la méthode permettant de charger un téléphone de la marque SonneEricSonne ?
+    Comment s'appelle la mÃ©thode permettant de charger un tÃ©lÃ©phone de la marque SonneEricSonne ?
     Et celle de la marque SamSaoul ? Qu'en est-il pour notre chargeur ?
 
 ### Etape 8
