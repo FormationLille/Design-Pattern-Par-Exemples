@@ -1,4 +1,4 @@
-## **Qu’est-ce qu’un Design Pattern :**
+﻿## **Qu’est-ce qu’un Design Pattern :**
 
 Un **Design Pattern** est la réponse à des problèmes récurrents rencontrés en informatique et surtout lors de la construction d’objets complexes.
 
@@ -30,7 +30,7 @@ Implémentation :
 
 Présentation du diagramme de classes de notre exemple :
 
-![Diagramme des classes](https://www.tutorialspoint.com/design_pattern/images/builder_pattern_uml_diagram.jpg)
+![enter image description here](https://www.tutorialspoint.com/design_pattern/images/builder_pattern_uml_diagram.jpg)
 
 ## **Étape n°1 :**
 
