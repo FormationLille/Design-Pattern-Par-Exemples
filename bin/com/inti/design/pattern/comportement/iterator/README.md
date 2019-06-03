@@ -1,6 +1,6 @@
-# Mon tutoriel de Design Pattern - nom du design pattern
+# Mon tutoriel de Design Pattern - Iterator
 
-    Description du design pattern
+Le but est ici d'accéder à un objet dans une liste de manière séquentielle sans connaitre pour autant sa représentation (list, stack, tree,etc.)
 
 # Implementation
 
