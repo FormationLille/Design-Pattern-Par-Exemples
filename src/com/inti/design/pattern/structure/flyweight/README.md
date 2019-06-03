@@ -146,6 +146,7 @@ Utilisez l'usine pour obtenir des objets en donnant des informations tel que la 
 
 Le resultat attendu est :
 
+```java
     Creating circle of color : Black
     Circle: Draw() [Color : Black, x : 36, y :71, radius :100
     Creating circle of color : Green
@@ -171,7 +172,7 @@ Le resultat attendu est :
     Circle: Draw() [Color : Green, x : 38, y :93, radius :100
     Circle: Draw() [Color : Red, x : 76, y :82, radius :100
     Circle: Draw() [Color : Blue, x : 95, y :82, radius :100
-
+```
 
 ### Source :
 
