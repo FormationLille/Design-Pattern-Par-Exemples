@@ -101,6 +101,9 @@ public class ProxyPatternDemo {
 ### Etape finale
 
 Enfin, on vérifie la sortie sur la commande.
+
+```java
 Loading test_10mb.jpg
 Displaying test_10mb.jpg
 Displaying test_10mb.jpg
+```
