@@ -1,4 +1,4 @@
-package com.inti.design.pattern.comportement.observer;
+package com.inti.design.pattern.comportement.observerV2;
 
 import com.inti.design.pattern.comportement.observer.ObservableConcret;
 import com.inti.design.pattern.comportement.observer.ObserverConcretImpl2;
@@ -12,7 +12,7 @@ public class Application {
 		ObserverConcretImpl1 obs1 = new ObserverConcretImpl1();
 		ObserverConcretImpl2 obs2 = new ObserverConcretImpl2();
 
-		//lobservable.setTemperature(10);
+		// lobservable.setEtat(10);
 
 		lobservable.addObserver(obs1);
 		lobservable.addObserver(obs2);

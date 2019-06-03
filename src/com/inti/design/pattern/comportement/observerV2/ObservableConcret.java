@@ -1,4 +1,4 @@
-package com.inti.design.pattern.comportement.observer;
+package com.inti.design.pattern.comportement.observerV2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class ObservableConcret implements IObservable {
 	public void notifyObservers() {
 
 		for (IObserver o : observers) {
-			o.update(this);
+			o.update(temperature);
 
 		}
 

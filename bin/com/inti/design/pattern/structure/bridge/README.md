@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 ﻿# Mon tutoriel de Design Pattern - BRIDGE
 
 Par Antoine C.
+=======
+# Mon tutoriel de Design Pattern - nom du design pattern
+>>>>>>> branchChadiaObserver
 
 Sources : 
 
