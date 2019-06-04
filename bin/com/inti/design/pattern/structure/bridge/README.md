@@ -48,11 +48,13 @@ L’implémentation est directement déclarée dans la classe abstraite. Le prob
 
 Le Design Pattern Bridge va nous permettre de créer des implémentations de manière efficace, méthodique et indépendante. Chaque implémenteur (PetitPrix.java, PrixMoyen.java et PrixEleve.java) héritera de l’interface et viendra redéfinir la méthode `assigner()` afin qu’elle corresponde aux attentes. 
 
-### Etape 1
+### Etape 1 Création de l'interface `OrdrePrix` et de ses implémenteurs
 
 Créez un nouveau projet : com.inti.design.pattern.structure.bridge
 
 Dans un premier package, `com.inti.design.pattern.structure.bridge.implementation`, créez l’interface et les classes qui implémentent cette interface :
+
+```java
 
     package com.inti.design.pattern.structure.bridge.implementation;
 
@@ -61,8 +63,10 @@ Dans un premier package, `com.inti.design.pattern.structure.bridge.implementatio
 	public void assigner(); // -> méthode pour assigner un ordre de prix
 
 	}
+```
 -------------------
-    package com.inti.design.pattern.structure.bridge.implementation;
+```java
+	package com.inti.design.pattern.structure.bridge.implementation;
 
 	public class PetitPrix implements OrdrePrix { // classes de mise en œuvre du Bridge
 
@@ -73,7 +77,9 @@ Dans un premier package, `com.inti.design.pattern.structure.bridge.implementatio
 	}
 
 	}
+```
 -------------------
+```java
 	package com.inti.design.pattern.structure.bridge.implementation;
 
 	public class PrixMoyen implements OrdrePrix { // classes de mise en œuvre du Bridge
@@ -84,7 +90,9 @@ Dans un premier package, `com.inti.design.pattern.structure.bridge.implementatio
 
 	}
 	}
+```
 -------------------
+```java
 	package com.inti.design.pattern.structure.bridge.implementation;
 
 	public class PrixEleve implements OrdrePrix { // classes de mise en œuvre du Bridge
@@ -96,10 +104,13 @@ Dans un premier package, `com.inti.design.pattern.structure.bridge.implementatio
 	}
 
 	}
+```
 
-### Etape 2
+### Etape 2 Création de la classe abstraite `Instrument` et de ses classes "filles" 
 
 Dans un autre package, `com.inti.design.pattern.structure.bridge.abstraction` (qui nous permet de souligner l’indépendance de l’abstraction vis-à-vis de son implémentation), rapportez la classe **abstraite** Instrument et les classes qui l'étendent :
+
+```java
 
 	package com.inti.design.pattern.structure.bridge.abstraction;
 
@@ -117,7 +128,9 @@ Dans un autre package, `com.inti.design.pattern.structure.bridge.abstraction` (q
 	public abstract void assigner();
 
 	}
+```
 -------------------
+```java
 	package com.inti.design.pattern.structure.bridge.abstraction;
 
 	import com.inti.design.pattern.structure.bridge.implementation.OrdrePrix;
@@ -139,7 +152,9 @@ Dans un autre package, `com.inti.design.pattern.structure.bridge.abstraction` (q
 	}
 
 	}
+```
 -------------------
+```java
 	package com.inti.design.pattern.structure.bridge.abstraction;
 
 	import com.inti.design.pattern.structure.bridge.implementation.OrdrePrix;
@@ -161,7 +176,9 @@ Dans un autre package, `com.inti.design.pattern.structure.bridge.abstraction` (q
 	}
 
 	}
+```
 -------------------
+```java
 	package com.inti.design.pattern.structure.bridge.abstraction;
 
 	import com.inti.design.pattern.structure.bridge.implementation.OrdrePrix;
@@ -182,10 +199,13 @@ Dans un autre package, `com.inti.design.pattern.structure.bridge.abstraction` (q
 
 	}
 	}
+```
 
-### Etape 3
+### Etape 3 Le run
 
 Testez votre programme dans le package `com.inti.design.pattern.structure.bridge`
+
+```java
 
 	package com.inti.design.pattern.structure.bridge;
 
@@ -212,6 +232,7 @@ Testez votre programme dans le package `com.inti.design.pattern.structure.bridge
 	}
 
 	}
+```
 
 ### Résultat attendu :
 
