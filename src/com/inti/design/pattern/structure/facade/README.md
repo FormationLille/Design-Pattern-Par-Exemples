@@ -32,7 +32,7 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
     de réservation simplifié pour le client.
     Nous allons avoir 4 classes, 4 interface, et 1 run.
 
-    ![DiagrammeDeClasseFacade](https://user-images.githubusercontent.com/50745455/58859998-6693c280-86ab-11e9-8f1f-3264423a7db9.PNG)
+![DiagrammeDeClasseFacade](https://user-images.githubusercontent.com/50745455/58859998-6693c280-86ab-11e9-8f1f-3264423a7db9.PNG)
 
 ### Etape 2 : Création du premier sous-système de réservation.
 
@@ -173,7 +173,7 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
     Travel package booked successfully
     ```
 
-### Etape 7 : Avez-vous remarqu� ?
+### Etape 7 : Avez-vous remarqué ?
 
     À priori, toutes nos interfaces ne sont pas forcément utiles... Elles implémentent toutes
     uniquement la méthode "book()". Nous pourrions donc facilement ne créer qu'une interface et
