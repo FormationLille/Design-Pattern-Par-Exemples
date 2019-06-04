@@ -3,9 +3,9 @@
 
 
 - Categorie : Comportement
-- Defintion : Evitez de coupler l'expiditeur à son destinataire en donnant a plus d'un objet une chance de gerer la demande
+- Defintion : Evitez de coupler l'expÃ©diteur Ã  son destinataire en donnant a plus d'un objet une chance de gerer la demande
 - Objectif : Le pattern "Chain of responsibility" repose sur la transformation de comportements particuliers en objets autonomes appeles "gestionnaires (Handler)"
-- Resultat : Le design pattern permet a plusieurs objets de gerer la demande sans coupler la classe emettrice aux classes concretes. La chaine peut etre composee dynamiquement au moment de l’execution avec tout gestionnaire qui suit une interface de gestionnaire standard. 
+- Resultat : Le design pattern permet a plusieurs objets de gerer la demande sans coupler la classe emettrice aux classes concretes. La chaine peut etre composee dynamiquement au moment de lâ€™execution avec tout gestionnaire qui suit une interface de gestionnaire standard. 
 
 # Exemple 
 
@@ -34,9 +34,9 @@ L'objectif ici est de renvoyer un message selon la demande du client. Le client 
     /**
      * Appelle le traitement sur le maillon courant
      * Puis demande au maillon suivant d'en faire autant,
-     * si le maillon courant n'a pas géré l'opération.
+     * si le maillon courant n'a pas gÃ©rÃ© l'opÃ©ration.
      * @param pNombre
-     * @return Si l'opération a été gérée.
+     * @return Si l'opÃ©ration a Ã©tÃ© gÃ©rÃ©e.
      */
     public boolean operation(int pNombre) {
         if(operationSpec(pNombre)) {
@@ -64,9 +64,9 @@ L'objectif ici est de renvoyer un message selon la demande du client. Le client 
     public class MaillonA extends Maillon {
 
     /**
-     * Méthode affichant un message 
-     * si le nombre passé en paramètre est pair
-     * @return true, si la maillon a géré l'opération
+     * MÃ©thode affichant un message 
+     * si le nombre passÃ© en paramÃ¨tre est pair
+     * @return true, si la maillon a gÃ©rÃ© l'opÃ©ration
      */
     public boolean operationSpec(int pNombre) {
         if(pNombre % 2 == 0) {
@@ -84,9 +84,9 @@ L'objectif ici est de renvoyer un message selon la demande du client. Le client 
     public class MaillonB extends Maillon {
 
     /**
-     * Méthode affichant un message 
-     * si le nombre passé en paramètre est inférieur à 2
-     * @return true, si la maillon a géré l'opération
+     * MÃ©thode affichant un message 
+     * si le nombre passÃ© en paramÃ¨tre est infÃ©rieur Ã  2
+     * @return true, si la maillon a gÃ©rÃ© l'opÃ©ration
      */
     public boolean operationSpec(int pNombre) {
         if(pNombre < 2) {
@@ -104,9 +104,9 @@ L'objectif ici est de renvoyer un message selon la demande du client. Le client 
     public class MaillonC extends Maillon {
 
     /**
-     * Méthode affichant un message 
-     * si le nombre passé en paramètre est supérieur à 2
-     * @return true, si la maillon a géré l'opération
+     * MÃ©thode affichant un message 
+     * si le nombre passÃ© en paramÃ¨tre est supÃ©rieur Ã  2
+     * @return true, si la maillon a gÃ©rÃ© l'opÃ©ration
      */
     public boolean operationSpec(int pNombre) {
         if(pNombre > 2) {
@@ -126,24 +126,24 @@ L'objectif ici est de renvoyer un message selon la demande du client. Le client 
     public class ChainOfResponsibilityPatternMain {
 
     public static void main(String[] args) {
-        // Création des maillons
+        // CrÃ©ation des maillons
         Maillon lMaillonA = new MaillonA();
         Maillon lMaillonB = new MaillonB();
         Maillon lMaillonC = new MaillonC();
         
-        // Définition de l'enchainement des maillons
+        // DÃ©finition de l'enchainement des maillons
         lMaillonA.setSuivant(lMaillonB);
         lMaillonB.setSuivant(lMaillonC);
         
-        // Appel de la méthode du premier maillon
-        // avec des valeurs différentes
-        System.out.println("--> Appel de la méthode avec paramètre '1' : ");
+        // Appel de la mÃ©thode du premier maillon
+        // avec des valeurs diffÃ©rentes
+        System.out.println("--> Appel de la mÃ©thode avec paramÃ¨tre '1' : ");
         lMaillonA.operation(1);
-        System.out.println("--> Appel de la méthode avec paramètre '2' : ");
+        System.out.println("--> Appel de la mÃ©thode avec paramÃ¨tre '2' : ");
         lMaillonA.operation(2);
-        System.out.println("--> Appel de la méthode avec paramètre '3' : ");
+        System.out.println("--> Appel de la mÃ©thode avec paramÃ¨tre '3' : ");
         lMaillonA.operation(3);
-        System.out.println("--> Appel de la méthode avec paramètre '4' : ");
+        System.out.println("--> Appel de la mÃ©thode avec paramÃ¨tre '4' : ");
         lMaillonA.operation(4);
     }
     }
@@ -152,11 +152,11 @@ L'objectif ici est de renvoyer un message selon la demande du client. Le client 
 ### Resultat
 
         Affichage : 
-        Appel de la méthode avec paramètre '1' : 
+        Appel de la mÃ©thode avec paramÃ¨tre '1' : 
         MaillonB : 1 : < 2
-        Appel de la méthode avec paramètre '2' : 
+        Appel de la mÃ©thode avec paramÃ¨tre '2' : 
         MaillonA : 2 : pair
-        Appel de la méthode avec paramètre '3' : 
+        Appel de la mÃ©thode avec paramÃ¨tre '3' : 
         MaillonC : 3 : > 2
-        Appel de la méthode avec paramètre '4' : 
+        Appel de la mÃ©thode avec paramÃ¨tre '4' : 
         MaillonA : 4 : pair
