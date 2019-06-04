@@ -5,6 +5,9 @@ Auteur : Romain Parisot
 Le but du design pattern Prototype est de pouvoir facilement copier un objet déjà instancié. Plutôt que de créer un nouvel objet et de l'instancier avec les mêmes paramètres que l'objet à copier, on clone directement l'objet, à la manière de la mitose des cellules.
 Cela permet une économie de ressources car on évite la création classique d'objets pour une méthode plus optimisée. C'est une meilleure méthode pour créer des objets, notamment lorsque la création de ceux-ci fait intervenir des méthodes coûteuses comme par exemple l'accès à une base de données.
 
+# Diagrame de classe
+![Diagrame de classe Prototype][DaigrameClasse]
+
 # Implementation
 
 Nous sommes dans une société de burgers. Le but est de pouvoir être le plus productif en fabriquant des burgers rapidement.
@@ -179,3 +182,5 @@ Tous les objets ne peuvent pas non plus être clonnable, il faut donc être prud
 # Sites utiles :
 - https://gameprogrammingpatterns.com/prototype.html
 - https://ydisanto.developpez.com/tutoriels/java/cloneable/
+
+[DiagrameClasse]: https://github.com/FormationLille/Design-Pattern-Par-Exemples/master/src/com/inti/design/pattern/creation/prototype/diagrameClasse.png
