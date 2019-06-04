@@ -183,4 +183,4 @@ Tous les objets ne peuvent pas non plus être clonnable, il faut donc être prud
 - https://gameprogrammingpatterns.com/prototype.html
 - https://ydisanto.developpez.com/tutoriels/java/cloneable/
 
-[DiagrameClasse]: https://github.com/FormationLille/Design-Pattern-Par-Exemples/blob/master/src/com/inti/design/pattern/creation/prototype/DiagrameClasse.png
+[DiagrameClasse]: https://github.com/FormationLille/Design-Pattern-Par-Exemples/blob/master/src/com/inti/design/pattern/creation/prototype/DiagrameClasse.png =200*200
