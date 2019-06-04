@@ -3,11 +3,12 @@
 ***
 * Auteur : Antoine Storme
 * Date de dernière maj : 03/06/2019
+* DesingPattern : Structure
 ***
 
 
-    Adapter permet à plusieurs entités incompatibles de s'utiliser ensemble, en créant un pont, 
-    une relation artificielle entre  ces entités.
+    "Adapter" permet à plusieurs entités incompatibles de s'utiliser ensemble, en créant un pont, 
+    une relation artificielle entre  ces entités. Il est très fréquemment utilisé.
 
 # Implementation
 
@@ -20,18 +21,18 @@
     alors que le dernier vole... Mais vous ne vous souvenez plus de qui fait quoi ! Un adaptateur avec un
     nom de méthode "déplacement", qui vous renvois le moyen de déplacement, peu importe le nom spécifique
     des méthodes.
+    - Un lecteur média pouvant lire des fichiers .mp3, .mp4, .avi, etc.
 
 
-    Mettre le diagramme de classes
-
-
+    
 ### Etape 1
 
-    Dans l'exemple ci-dessous, nous allons étudier l'exemple d'une entreprise voulant créer un chargeur
+    Dans l'exemple ci-dessous, nous allons étudier une entreprise voulant créer un chargeur
     universel pour téléphone. Notons cependant que tous les téléphones n'ont pas forcément les mêmes besoins...
     Je vous laisse trouver la subtilité dans l'exemple ;).
     Nous allons avoir 5 classes, 1 interface, et 1 run.
-    Mettre le code des classes principales
+
+    ![DiagrammeDeClasseAdaptater](https://user-images.githubusercontent.com/50745455/58859948-42d07c80-86ab-11e9-8bad-072c0559162d.PNG)
 
 ### Etape 2
 
