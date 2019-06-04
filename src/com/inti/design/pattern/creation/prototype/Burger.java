@@ -7,21 +7,21 @@ import java.util.List;
  * 
  * @author Romain Parisot
  * 
- * Voici une classe de burgers particuliers car il peuvent être clonés, ce qui en facilite grandement la production
+ * Voici une classe de burgers particuliers car il peuvent Ãªtre clonÃ©s, ce qui en facilite grandement la production
  *
  */
 public class Burger implements Cloneable {
 	// le nom du burger
 	private String nom;
-	// La liste des ingrédients du burger
+	// La liste des ingrÃ©dients du burger
 	private List<String> ingredients;
 
-	// Méthode d'jout d'un ingrédient :
+	// MÃ©thode d'jout d'un ingrÃ©dient :
 	public void addIngredient(String ingredient) {
 		this.ingredients.add(ingredient);
 	}
 
-	// Méthode de clonage du burger
+	// MÃ©thode de clonage du burger
 	@Override
 	public Object clone() {
 		Object object = null;
@@ -31,6 +31,12 @@ public class Burger implements Cloneable {
 			e.printStackTrace();
 		}
 		return object;
+	}
+	
+	// MÃ©thode de copie du burger
+	public Burger copy() {
+		Burger copie = new Burger(this.nom, new ArrayList<String>(this.ingredients));
+		return copie;
 	}
 
 	// Constructeurs
