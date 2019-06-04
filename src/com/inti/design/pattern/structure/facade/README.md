@@ -2,7 +2,7 @@
 
 ***
 * Auteur : Antoine Storme
-* Date de derni�re maj : 03/06/2019
+* Date de dernière maj : 03/06/2019
 * DesignPattern : Structure
 ***
 
@@ -11,14 +11,14 @@
 Provide a unified interface to a set of interfaces in a subsystem. 
 Façade defines a higher-level interface that makes the subsystem easier to use.
 ***
-    Facade permet de rendre simple d'utilisation un (sous-)syst�me tr�s complexe.
+    Facade permet de rendre simple d'utilisation un (sous-)système trés complexe.
     Pour cela, nous ajoutons une interface aux systèmes créés. Il est très fréquemment utilisé.
 
 # Implementation
 
-    Voici quelques exemples de la vie courante repr�sentant l'usage d'un adaptateur:
+    Voici quelques exemples de la vie courante représentant l'usage d'un adaptateur:
     - Vous entrez dans votre voiture. Où est la "facade" ?
-    - Vous d�marrez votre ordinateur. Vous n'avez pas à gérer tous les starters.
+    - Vous démarrez votre ordinateur. Vous n'avez pas à gérer tous les starters.
     - Vous souhaitez changer la température chez vous, via votre superbe IHM fixée au mur, qui rend votre
     maison hyper connectée ! "Click" = température changée. On comprend vite l'intérêt d'une facade, non ?
     - 3 stations météorologiques, avec chacune leur point fort.
@@ -28,7 +28,7 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
 
 ### Etape 1
 
-    Dans l'exemple ci-dessous, nous allons �tudier une agence de voyage voulant cr�er un site
+    Dans l'exemple ci-dessous, nous allons étudier une agence de voyage voulant créer un site
     de réservation simplifié pour le client.
     Nous allons avoir 4 classes, 4 interface, et 1 run.
 
@@ -36,7 +36,7 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
 
 ### Etape 2 : Création du premier sous-système de réservation.
 
-    Cr�er votre premi�re classe pour réserver l'avion, ainsi que son interface.
+    Créer votre premiére classe pour réserver l'avion, ainsi que son interface.
 
     Classe FlightBooking: FlightBooking.java
     ```java
@@ -61,7 +61,7 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
 
 ### Etape 3 : Création des sous-système de réservation 2 et 3.
 
-    Cr�ation des réservation d'hotel et de taxi:
+    Création des réservation d'hotel et de taxi:
 
     Classe de reservation d'hotel: HotelBooking.java
     ```java
@@ -145,7 +145,7 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
 
 ### Etape 5 
 
-    On cr�e le main: FacadeClient.java
+    On crée le main: FacadeClient.java
 
     ```java
     public class FacadeClient {
@@ -164,7 +164,7 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
 
 ### Etape 6
 
-    Le r�sultat consolitique:
+    Le résultat consolitique:
 
     ```java
     Transfert booked successfully
