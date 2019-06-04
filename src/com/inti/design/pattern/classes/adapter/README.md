@@ -191,7 +191,7 @@
     voltage : 5
 ```
 
-### Etape 7 : Avez-vous remarquÃ© ?
+### Etape 7 : Avez-vous remarqué ?
 
     Comment s'appelle la méthode permettant de charger un téléphone de la marque SonneEricSonne ?
     Et celle de la marque SamSaoul ? Qu'en est-il pour notre chargeur ?
