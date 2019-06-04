@@ -32,7 +32,7 @@
 
     Nous allons avoir 5 classes, 1 interface, et 1 run.
 
-    ![DiagrammeDeClasseAdaptater](https://user-images.githubusercontent.com/50745455/58859948-42d07c80-86ab-11e9-8bad-072c0559162d.PNG)
+![DiagrammeDeClasseAdaptater](https://user-images.githubusercontent.com/50745455/58859948-42d07c80-86ab-11e9-8bad-072c0559162d.PNG)
 
 ### Etape 2
 
