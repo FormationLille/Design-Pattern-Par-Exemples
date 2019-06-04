@@ -39,7 +39,7 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
     Créer votre premiére classe pour réserver l'avion, ainsi que son interface.
 
     Classe FlightBooking: FlightBooking.java
-    ```java
+```java
     public class FlightBooking implements FlightBookingInterface{
 
         @Override
@@ -49,22 +49,22 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
         }
 
     }
-    ```
+```
 
     Interface: FlightBookingInterface.java
-    ```java
+```java
     public interface FlightBookingInterface {
 
         public void book();
     }
-    ```
+```
 
 ### Etape 3 : Création des sous-système de réservation 2 et 3.
 
     Création des réservation d'hotel et de taxi:
 
     Classe de reservation d'hotel: HotelBooking.java
-    ```java
+```java
     public class HotelBooking implements HotelBookingInterface{
 
         @Override
@@ -74,18 +74,18 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
         }
 
     }
-    ```
+```
 
     Interface: HotelBookingInterface.java
-    ```java
+```java
     public interface HotelBookingInterface {
 
         public void book();
     }
-    ```
+```
 
     Classe de reservation du taxi: TransfertBooking.java
-    ```java
+```java
     public class TransfertBooking implements TransfertBookingInterface{
 
         @Override
@@ -95,15 +95,15 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
         }
 
     }
-    ```
+```
 
     Interface: TransfertBookingInterface.java
-    ```java
+```java
     public interface TransfertBookingInterface {
 
         public void book();
     }
-    ```
+```
 
     Notre agence de voyage est satisfaite... Mais pas entièrement... Ne serait-ce pas idéal de
     pouvoir regrouper toutes ces réservations au même endroit ?
@@ -113,7 +113,7 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
     Nous allons donc maintenant regrouper nos fonctionnalités:
 
     Classe du reroupement: TravelPackageFacade.java
-    ```java
+```java
     public class TravelPackageFacade implements TravelPackageInterface{
 
         @Override
@@ -130,15 +130,15 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
         }
 
     }
-    ```
+```
 
     Et son Interface: TravelPackageInterface.java
-    ```java
+```java
     public interface TravelPackageInterface {
 
         public void book();
     }
-    ```
+```
     
     Maintenant, nous savons que lorsqu'un TravelPackage est effectué, toutes les réservations
     sont créés. C'est quand même plus sympa comme ça non ? Et pour le client alors, ça change quoi ?
@@ -147,7 +147,7 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
 
     On crée le main: FacadeClient.java
 
-    ```java
+```java
     public class FacadeClient {
 
         public static void main(String[] args) {
@@ -157,7 +157,7 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
         }
 
     }
-    ```
+```
 
     À la poubelle les 3 réservations différentes ! Le client n'a qu'à réserver son TravelPackage
     et le voilà prêt pour les Caraïbes !
@@ -166,12 +166,12 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
 
     Le résultat consolitique:
 
-    ```java
+```java
     Transfert booked successfully
     Hotel booked successfully
     Flight booked successfully
     Travel package booked successfully
-    ```
+```
 
 ### Etape 7 : Avez-vous remarqué ?
 
