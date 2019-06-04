@@ -22,6 +22,8 @@
     nom de méthode "déplacement", qui vous renvois le moyen de déplacement, peu importe le nom spécifique
     des méthodes.
     - Un lecteur média pouvant lire des fichiers .mp3, .mp4, .avi, etc.
+    
+![AdapterDesignPattern](https://user-images.githubusercontent.com/50745455/58863002-33a0fd00-86b2-11e9-9a28-4538e63ec623.jpg)
 
     
 ### Etape 1
