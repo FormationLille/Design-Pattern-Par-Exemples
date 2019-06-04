@@ -60,6 +60,99 @@ for(Client monClient : clients){
 }
 ```
 
+## Etape 4 : Le code final
+Burger.java :
+```java
+public class Burger implements Cloneable {
+  // le nom du burger
+  private String nom;
+  // La liste des ingrédients du burger
+  private List<String> ingredients;
+
+  // Méthode d'jout d'un ingrédient :
+  public void addIngredient(String ingredient) {
+    this.ingredients.add(ingredient);
+  }
+
+  // Méthode de clonage du burger
+  @Override
+  public Object clone() {
+    Object object = null;
+    try {
+      object = super.clone();
+    } catch (CloneNotSupportedException e) {
+      e.printStackTrace();
+    }
+      return object;
+  }
+
+  // Constructeurs
+  public Burger(String nom) {
+    super();
+    this.nom = nom;
+    this.ingredients = new ArrayList<String>();
+  }
+}
+```
+
+Application.java :
+```java
+public class Application {
+  public static void main(String[] args) {
+
+    // On crée un premier burger :
+    Burger vegi = new Burger("Vegi Burger");
+    vegi.addIngredient("Bun");
+    vegi.addIngredient("Steak de soja");
+    vegi.addIngredient("Salade");
+    vegi.addIngredient("Radis");
+    vegi.addIngredient("Concombre");
+    vegi.addIngredient("Guacamole");
+    vegi.addIngredient("Bun");
+
+    System.out.println("Le burger type :");
+    System.out.println(vegi);
+
+
+    // On clone ensuite ce burger pour les différents clients :
+
+    // La liste des burgers crées
+    List<Burger> burgers = new ArrayList<Burger>();
+    // La liste des clients
+    String[] clients = { "Marcel", "Gérard", "Alice ", "Paula " };
+
+    // Pour chaque client, on clone le burger type et on l'ajoute à la liste des
+    // burgers crées.
+    for (int i = 0; i < clients.length; i++) {
+
+      burgers.add((Burger) vegi.clone());
+
+      // on peut ensuite les modifier indépendemment :
+      burgers.get(i).setNom(vegi.getNom() + " de " + clients[i]);
+    }
+
+	
+    // Les burgers créés :
+    System.out.println("\nLes burgers crées :");
+    for (Burger burger : burgers) {
+      System.out.println(burger);
+    }
+  }
+}
+```
+
+Sortie Console :
+```
+Le burger type :
+Vegi Burger : [Bun, Steak de soja, Salade, Radis, Concombre, Guacamole, Bun]
+
+Les burgers crées :
+Vegi Burger de Marcel : [Bun, Steak de soja, Salade, Radis, Concombre, Guacamole, Bun]
+Vegi Burger de Gérard : [Bun, Steak de soja, Salade, Radis, Concombre, Guacamole, Bun]
+Vegi Burger de Alice  : [Bun, Steak de soja, Salade, Radis, Concombre, Guacamole, Bun]
+Vegi Burger de Paula  : [Bun, Steak de soja, Salade, Radis, Concombre, Guacamole, Bun]
+```
+
 # Conclusion
 Le design pattern Prototype permet de cloner un objet afin d'éviter de recréer l'objet de zéro. il permet une optimisation des performances du programme.
 Pour implémenter ce design pattern en Java, il suffit de déclarer la classe que l'on souhaite cloner comme ```cloneable``` et de lui donner la méthode appropriée :
