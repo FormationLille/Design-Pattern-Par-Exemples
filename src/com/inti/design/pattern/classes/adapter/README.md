@@ -2,22 +2,13 @@
 
 ***
 * Auteur : Antoine Storme
-<<<<<<< HEAD
-* Date de derni�re maj : 03/06/2019
+* Date de dernière maj : 03/06/2019
 * DesingPattern : Structure
 ***
 
 
-    "Adapter" permet � plusieurs entit�s incompatibles de s'utiliser ensemble, en cr�ant un pont, 
-    une relation artificielle entre  ces entit�s. Il est tr�s fr�quemment utilis�.
-=======
-* Date de dernière maj : 03/06/2019
-***
-
-
-    Adapter permet à plusieurs entités incompatibles de s'utiliser ensemble, en créant un pont, 
-    une relation artificielle entre  ces entités.
->>>>>>> 57164bef5bd8ca52eebb34cc6e20d24999810c8f
+    "Adapter" permet à plusieurs entités incompatibles de s'utiliser ensemble, en créant un pont, 
+    une relation artificielle entre  ces entités. Il est très fréquemment utilisé.
 
 # Implementation
 
@@ -28,28 +19,17 @@
     insérez la carte dans un support adapté, permettant la lecture de la carte par l'ordinateur.
     - Vous souhaitez savoir comment se déplace un chien, un oiseau et un humain. L'un court, l'autre conduis
     alors que le dernier vole... Mais vous ne vous souvenez plus de qui fait quoi ! Un adaptateur avec un
-<<<<<<< HEAD
-    nom de m�thode "d�placement", qui vous renvois le moyen de d�placement, peu importe le nom sp�cifique
-    des m�thodes.
-    - Un lecteur m�dia pouvant lire des fichiers .mp3, .mp4, .avi, etc.
-=======
     nom de méthode "déplacement", qui vous renvois le moyen de déplacement, peu importe le nom spécifique
     des méthodes.
->>>>>>> 57164bef5bd8ca52eebb34cc6e20d24999810c8f
-
+    - Un lecteur média pouvant lire des fichiers .mp3, .mp4, .avi, etc.
 
     
 ### Etape 1
 
-<<<<<<< HEAD
-    Dans l'exemple ci-dessous, nous allons �tudier une entreprise voulant cr�er un chargeur
-    universel pour t�l�phone. Notons cependant que tous les t�l�phones n'ont pas forc�ment les m�mes besoins...
-    Je vous laisse trouver la subtilit� dans l'exemple ;).
-=======
-    Dans l'exemple ci-dessous, nous allons étudier l'exemple d'une entreprise voulant créer un chargeur
+    Dans l'exemple ci-dessous, nous allons étudier une entreprise voulant créer un chargeur
     universel pour téléphone. Notons cependant que tous les téléphones n'ont pas forcément les mêmes besoins...
     Je vous laisse trouver la subtilité dans l'exemple ;).
->>>>>>> 57164bef5bd8ca52eebb34cc6e20d24999810c8f
+
     Nous allons avoir 5 classes, 1 interface, et 1 run.
 
     ![DiagrammeDeClasseAdaptater](https://user-images.githubusercontent.com/50745455/58859948-42d07c80-86ab-11e9-8bad-072c0559162d.PNG)
@@ -61,7 +41,7 @@
     Classe Chargeur: Chargeur.java
 ```java
     public class Chargeur {
-        // le portable branché sur le chargeur
+        // le portable branchÃ© sur le chargeur
         private InterfaceChargeable telephone;
         // le voltage en sortie du chargeur
         private final int VOLTAGE = 10;
@@ -114,12 +94,12 @@
     }
 ```
 
-    Ok, donc maintenant, notre entreprise a créée son chargeur... Mais l'embout ne correspond à
+    Ok, donc maintenant, notre entreprise a créée son chargeur... Mais l'embout ne correspond à 
     aucun téléphone du marché ! 
 
 ### Etape 4
 
-    Nous allons donc maintenant palier à ce problème, et créer (vous l'avez deviné je suis sûr) un Adaptateur !
+    Nous allons donc maintenant palier à  ce problème, et créer (vous l'avez deviné je suis sûr) un Adaptateur !
     Enfin... plusieurs en fait !
 
     Classe du premier adaptateur de téléphone: AdaptateurSamSaoule.java
@@ -211,7 +191,7 @@
     voltage : 5
 ```
 
-### Etape 7 : Avez-vous remarqué ?
+### Etape 7 : Avez-vous remarquÃ© ?
 
     Comment s'appelle la méthode permettant de charger un téléphone de la marque SonneEricSonne ?
     Et celle de la marque SamSaoul ? Qu'en est-il pour notre chargeur ?
