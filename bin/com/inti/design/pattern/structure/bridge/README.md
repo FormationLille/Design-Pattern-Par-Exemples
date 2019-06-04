@@ -213,7 +213,16 @@ Testez votre programme dans le package `com.inti.design.pattern.structure.bridge
 
 	}
 
-### Résultat
+### Résultat attendu :
+
+	Flûte à bec, ordre de prix :
+	petit prix 
+	Guitar Fender, ordre de prix :
+ 	prix moyen 
+	Batterie Pearl, ordre de prix : 
+ 	prix elevé 
+
+### Résumé
 
 On rappelle les 3 objectifs de départ du BRIDGE :
 
@@ -231,7 +240,7 @@ On rappelle les 3 objectifs de départ du BRIDGE :
 
 -> Dans cet exemple notre design pattern nous évitera de faire des redéfinitions de méthode, et des doublons pour faire évoluer l'application.
 
-### Résumé
+### Conclusion
 
 > Nous avons séparé les différents composants de cette application, cela nous permet d'obtenir une solution facilement réutilisable. 
 
