@@ -22,7 +22,9 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
     - Vous souhaitez changer la température chez vous, via votre superbe IHM fixée au mur, qui rend votre
     maison hyper connectée ! "Click" = température changée. On comprend vite l'intérêt d'une facade, non ?
     - 3 stations météorologiques, avec chacune leur point fort.
-    On veut l'information, pas la source --> Facade.    
+    On veut l'information, pas la source --> Facade.
+    
+![FacadeDesignPattern](https://user-images.githubusercontent.com/50745455/58862908-02c0c800-86b2-11e9-851c-75c93be447ac.jpg)
 
 ### Etape 1
 
