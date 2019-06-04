@@ -23,8 +23,6 @@ Façade defines a higher-level interface that makes the subsystem easier to use.
     maison hyper connectée ! "Click" = température changée. On comprend vite l'intérêt d'une facade, non ?
     - 3 stations météorologiques, avec chacune leur point fort.
     On veut l'information, pas la source --> Facade.    
-    Mettre le diagramme de classes
-
 
 ### Etape 1
 
